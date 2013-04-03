@@ -1,0 +1,35 @@
+.wCheck {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    font-size: 0px;
+    line-height: 0px;
+    cursor: pointer;
+}
+.wCheck-label {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    line-height: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-left: 4px;
+    margin-right: 10px;
+    font-size: 10px;
+    color: #666;
+}
+.wCheck {
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+.wCheck-selector {
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.wCheck-off .wCheck-selector {
+    display: none;
+}
+.wCheck-on .wCheck-selector{
+    display: block;
+}
