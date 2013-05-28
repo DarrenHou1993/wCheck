@@ -25,10 +25,6 @@ $.fn.wCheck.defaults = {
 };
 ```
 
-## Video Tutorial
-
-You can check out a video tutorial on how to use the plugin on YouTube here: [wCheck jQuery Plugin Video Tutorial](http://youtube.com/)
-
 
 ## Examples
 
