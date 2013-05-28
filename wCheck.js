@@ -27,8 +27,8 @@
     Check.prototype = {
         generate: function() {
             if (!this.$check) {
-                var _self = this;
-                var name = '';
+                var _self = this,
+                    name = '';
 
                 if (this.options.mode ===  'radio') {
                     this.name = this.$el.attr('name');
@@ -43,7 +43,10 @@
                 this.$check
                 .mouseover(function(e) { _self.$el.trigger('mouseover'); })
                 .mouseout(function(e) { _self.$el.trigger('mouseout'); })
-                .click(function(e) { _self.$el.trigger('click'); })
+                .click(function(e) {
+                    _self.setCheck(_self.options.mode === 'radio' ? true : !_self.checked);
+                    _self.$el.trigger('click');
+                })
                 .hover(
                     function(){ _self.$check.css({backgroundPosition:'center -' + _self.options.height + 'px'}); },
                     function(){ _self.$check.css({backgroundPosition:'center 0px'}); }
@@ -141,12 +144,12 @@
                     if (wCheck[options]) {
                         wCheck[options].apply(wCheck, [value]);
                     } else if (value) {
-                        if (wCheck[func]) wCheck[func].apply(wCheck, [value]);
-                        if (wCheck.options[options]) wCheck.options[options] = value;
+                        if (wCheck[func]) { wCheck[func].apply(wCheck, [value]); }
+                        if (wCheck.options[options]) { wCheck.options[options] = value; }
                     } else {
-                        if(wCheck[func]) values.push(wCheck[func].apply(wCheck, [value]));
-                        else if (wCheck.options[options]) values.push(wCheck.options[options]);
-                        else values.push(null);
+                        if(wCheck[func]) { values.push(wCheck[func].apply(wCheck, [value])); }
+                        else if (wCheck.options[options]) { values.push(wCheck.options[options]); }
+                        else { values.push(null); }
                     }
                 }
             });
@@ -161,22 +164,19 @@
         function get(el) {
             var wCheck = $.data(el, 'wCheck');
             if (!wCheck) {
-                wCheck = new Check(el, options);
+                var _options = jQuery.extend(true, {}, options);
+                wCheck = new Check(el, _options);
                 $.data(el, 'wCheck', wCheck);
             }
+
             return wCheck;
         }
 
-        function set() {
-            var wCheck = get(this);
-            wCheck.setCheck(wCheck.options.mode === 'radio' ? true : !wCheck.checked);
-        }
-
-        this.each(function() { if ($(this).attr('type') === options.mode) get(this); });
-
-        this.click(set);
-
-        return this;
+        return this.each(function() {
+            if ($(this).attr('type') === options.mode) {
+                get(this);
+            }
+        });
     };
 
     $.fn.wRadio = function(options, value) {
