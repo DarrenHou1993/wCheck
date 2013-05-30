@@ -8,7 +8,7 @@
  * @license         This websanova wCheck jQuery plug-in is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/wCheck
- * @version         Version 1.0.0
+ * @version         Version 1.1.0
  *
  ******************************************/
 
@@ -18,6 +18,7 @@
         this.$el = $(el);
         this.options = options;
 
+        this.mode = this.$el.prop('type').toLowerCase();
         this.name = '';
         this.checked = false;
 
@@ -27,84 +28,104 @@
     Check.prototype = {
         generate: function() {
             if (!this.$check) {
-                var _self = this,
-                    name = '';
+                var _self = this;
 
-                if (this.options.mode ===  'radio') {
+                if (this.mode ===  'radio') {
                     this.name = this.$el.attr('name');
-                    name = 'wCheck-name-' + this.$el.attr('name');
                 }
 
+                this.$check = $('<div class="wCheck wCheck-off wCheck-mode-' + this.mode + ' ' + (this.mode === 'radio' && this.name ? 'wCheck-name-' + this.name : '') + '"></div>');
                 this.$selector = $('<div class="wCheck-selector"></div>');
-                this.$check = $('<div class="wCheck wCheck-off wCheck-mode-' + this.options.mode + ' ' + name + '"></div>');
                 this.$check.append(this.$selector);
                 this.$el.hide().after(this.$check);
                 
+                this.$el.click(function(){ _self.onClick(); }); // triggers on label click and $check click.  Also triggers any click events on element ($el)
                 this.$check
-                .mouseover(function(e) { _self.$el.trigger('mouseover'); })
-                .mouseout(function(e) { _self.$el.trigger('mouseout'); })
-                .click(function(e) {
-                    _self.setCheck(_self.options.mode === 'radio' ? true : !_self.checked);
-                    _self.$el.trigger('click');
-                })
+                .click(function(e) { _self.$el.click(); })
                 .hover(
-                    function(){ _self.$check.css({backgroundPosition:'center -' + _self.options.height + 'px'}); },
-                    function(){ _self.$check.css({backgroundPosition:'center 0px'}); }
+                    function(){ _self.onFocus(); },
+                    function(){ _self.onBlur(); }
                 );
 
-                this.createLabel();
+                if (this.$el.prop('checked')) { this.setCheck(true); }
 
-                if (this.$el.attr('checked') === 'checked') this.setCheck(true);
-
-                this.setWidth(this.options.width);
-                this.setHeight(this.options.height);
+                this.createLabel(); // make sure this is run before setTheme()
                 this.setTheme(this.options.theme);
                 this.setSelector(this.options.selector);
             }
             return this.$check;
         },
 
-        reset: function() {
-            this.checked = false;
-            this.$check.removeClass('wCheck-on').addClass('wCheck-off');
-            this.$el.removeAttr('checked');
-        },
-
         createLabel: function() {
-            var text = this.$el.attr('data-label');
+            var text = this.$el.attr('data-label'),
+                id = this.$el.attr('id'),
+                _self = this;
 
             if (text && text !== '') {
-                var id = this.$el.attr('id') || Math.random() * 100;
+                id = id || Math.random() * 100;
 
                 this.$el.attr('id', id);
                 this.$label = $('<label for="' + id + '" class="wCheck-label"></label>');
-
                 this.setLabel(text);
                 this.$check.after(this.$label);
+            }
+            else if (this.options.useExistingLabel && id) {
+                this.$label = $('label[for="' + id + '"]').addClass('wCheck-label');
+            }
+
+            if (this.$label) {
+                this.$label.hover(
+                    function(e){ _self.onFocus(); },
+                    function(e){ _self.onBlur(); }
+                );
+            }
+        },
+
+        onClick: function() {
+            this.setCheck(this.mode === 'radio' ? true : !this.checked);
+        },
+
+        onFocus: function() {
+            this.$check.addClass('wCheck-hover');
+            
+            if (this.$label && this.options.highlightLabel) {
+                this.$label.addClass('wCheck-label-hover');
+            }
+        },
+
+        onBlur: function() {
+            this.$check.removeClass('wCheck-hover');
+
+            if (this.$label && this.options.highlightLabel) {
+                this.$label.removeClass('wCheck-label-hover');
             }
         },
 
         setCheck: function(checked) {
             this.checked = checked;
 
-            if (this.options.mode === 'radio') {
+            if (this.mode === 'radio') {
                 $('.wCheck-name-' + this.name).removeClass('wCheck-on').addClass('wCheck-off');
                 this.$check.removeClass('wCheck-off').addClass('wCheck-on');
 
-                $('input:' + this.options.mode + '[name=' + this.name + ']')
-                .each(function(){ if($(this).data('wCheck')) $(this).data('wCheck').checked = false; })
+                $('input:' + this.mode + '[name=' + this.name + ']')
+                .each(function() { 
+                    if ($(this).data('wCheck')) {
+                        $(this).data('wCheck').checked = false;
+                    }
+                })
                 .removeAttr('checked');
 
-                this.$el.attr('checked', 'checked');
+                this.$el.prop('checked', true);
             }
-            else if (this.options.mode === 'checkbox') {
+            else if (this.mode === 'checkbox') {
                 if (this.checked) {
                     this.$check.removeClass('wCheck-off').addClass('wCheck-on');
-                    this.$el.attr('checked', 'checked');
+                    this.$el.prop('checked', true);
                 }
                 else {
                     this.$check.removeClass('wCheck-on').addClass('wCheck-off');
-                    this.$el.removeAttr('checked');
+                    this.$el.prop('checked', false);
                 }
             }
         },
@@ -114,21 +135,18 @@
         },
 
         setTheme: function(theme) {
-            this.$check.css('backgroundImage', 'url(' + theme + ')');
+            this.$check.attr('class', this.$check.attr('class').replace(/wCheck-theme-.+\s|wCheck-theme-.+$/, ''));
+            this.$check.addClass('wCheck-theme-' + theme);
+
+            if (this.$label) {
+                this.$label.attr('class', this.$label.attr('class').replace(/wCheck-label-theme-.+\s|wCheck-label-theme-.+$/, ''));
+                this.$label.addClass('wCheck-label-theme-' + theme);
+            }
         },
 
         setSelector: function(selector) {
-            this.$selector.css('backgroundImage', 'url(' + selector + ')');
-        },
-
-        setWidth: function(width) {
-            this.$check.css('width', width);
-            this.$selector.css('width', width);
-        },
-
-        setHeight: function(height) {
-            this.$check.css('height', height);
-            this.$selector.css('height', height);
+            this.$selector.attr('class', this.$selector.attr('class').replace(/wCheck-selector-.+\s|wCheck-selector-.+$/, ''));
+            this.$selector.addClass('wCheck-selector-' + selector);
         }
     };
     
@@ -172,27 +190,27 @@
             return wCheck;
         }
 
-        return this.each(function() {
-            if ($(this).attr('type') === options.mode) {
-                get(this);
-            }
-        });
+        return this.each(function() { get(this); });
+    };
+
+    $.fn.wCheck.defaults = {
+        theme: 'square-classic-blue',   // theme
+        selector: 'checkmark',          // selector
+        useExistingLabel: true,         // if there is a for="id" matching use it
+        highlightLabel: false           // toggle highlighting active/hover label
     };
 
     $.fn.wRadio = function(options, value) {
-        options = options || {};
-        options.mode = 'radio';
-        if (!options.theme) options.theme = './img/circle-classic-blue.png';
-        if (!options.selector) options.selector = './img/selector-circle-dot-blue.png';
+        options = $.extend({}, $.fn.wRadio.defaults, options);
+
         return $.fn.wCheck.apply(this, [options, value]);
     };
     
-    $.fn.wCheck.defaults = {
-        theme: './img/square-classic-blue.png',   // background image to use
-        selector: './img/selector-checkmark.png', // selector image to use
-        mode: 'checkbox',                         // two modes, checkbox or radio
-        width: 16,                                // width of check/radio
-        height: 16                                // height of check/radio
+    $.fn.wRadio.defaults = {
+        theme: 'circle-classic-blue',   // theme
+        selector: 'circle-dot-blue',    // selector
+        useExistingLabel: true,         // if there is a for="id" matching use it
+        highlightLabel: false           // toggle highlighting active/hover label
     };
     
 })(jQuery);

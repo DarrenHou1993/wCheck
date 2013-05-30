@@ -1,3 +1,6 @@
+/***********************************
+ * Layout
+ ***********************************/
 .wCheck {
     display: inline-block;
     *display: inline;
@@ -6,24 +9,23 @@
     font-size: 0px;
     line-height: 0px;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center 0;
 }
 .wCheck-label {
     display: inline-block;
     *display: inline;
     zoom: 1;
-    line-height: 16px;
-    height: 16px;
     vertical-align: middle;
-    margin-left: 4px;
-    margin-right: 10px;
+    cursor: pointer;
+    margin: 0 15px 7px 4px;
+    line-height: 16px;
     font-size: 10px;
     color: #666;
 }
-.wCheck {
-    background-repeat: no-repeat;
-    background-position: center 0;
-}
 .wCheck-selector {
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -33,3 +35,115 @@
 .wCheck-on .wCheck-selector{
     display: block;
 }
+/***********************************
+ * Themes
+ ***********************************/
+.wCheck {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 7px;
+}
+.wCheck-hover {
+    background-position: center -16px;
+}
+
+.wCheck-label-theme-square-classic-red.wCheck-label-hover,
+.wCheck-label-theme-square-inset-red.wCheck-label-hover,
+.wCheck-label-theme-square-radial-red.wCheck-label-hover,
+.wCheck-label-theme-circle-classic-red.wCheck-label-hover,
+.wCheck-label-theme-circle-inset-red.wCheck-label-hover,
+.wCheck-label-theme-circle-radial-red.wCheck-label-hover { color: #FF9966; }
+
+.wCheck-label-theme-square-classic-green.wCheck-label-hover,
+.wCheck-label-theme-square-inset-green.wCheck-label-hover,
+.wCheck-label-theme-square-radial-green.wCheck-label-hover,
+.wCheck-label-theme-circle-classic-green.wCheck-label-hover,
+.wCheck-label-theme-circle-inset-green.wCheck-label-hover,
+.wCheck-label-theme-circle-radial-green.wCheck-label-hover { color: #2ECB3E; }
+
+.wCheck-label-theme-square-classic-blue.wCheck-label-hover,
+.wCheck-label-theme-square-inset-blue.wCheck-label-hover,
+.wCheck-label-theme-square-radial-blue.wCheck-label-hover,
+.wCheck-label-theme-circle-classic-blue.wCheck-label-hover,
+.wCheck-label-theme-circle-inset-blue.wCheck-label-hover,
+.wCheck-label-theme-circle-radial-blue.wCheck-label-hover { color: #6699FF; }
+
+.wCheck-label-theme-square-classic-yellow.wCheck-label-hover,
+.wCheck-label-theme-square-inset-yellow.wCheck-label-hover,
+.wCheck-label-theme-square-radial-yellow.wCheck-label-hover,
+.wCheck-label-theme-circle-classic-yellow.wCheck-label-hover,
+.wCheck-label-theme-circle-inset-yellow.wCheck-label-hover,
+.wCheck-label-theme-circle-radial-yellow.wCheck-label-hover { color: #DDBD67; }
+
+.wCheck-theme-square-classic-red { background-image: url('./img/square-classic-red.png'); }
+.wCheck-theme-square-classic-green { background-image: url('./img/square-classic-green.png'); }
+.wCheck-theme-square-classic-blue { background-image: url('./img/square-classic-blue.png'); }
+.wCheck-theme-square-classic-yellow { background-image: url('./img/square-classic-yellow.png'); }
+.wCheck-theme-square-inset-red { background-image: url('./img/square-inset-red.png'); }
+.wCheck-theme-square-inset-green { background-image: url('./img/square-inset-green.png'); }
+.wCheck-theme-square-inset-blue { background-image: url('./img/square-inset-blue.png'); }
+.wCheck-theme-square-inset-yellow { background-image: url('./img/square-inset-yellow.png'); }
+.wCheck-theme-square-radial-red { background-image: url('./img/square-radial-red.png'); }
+.wCheck-theme-square-radial-green { background-image: url('./img/square-radial-green.png'); }
+.wCheck-theme-square-radial-blue { background-image: url('./img/square-radial-blue.png'); }
+.wCheck-theme-square-radial-yellow { background-image: url('./img/square-radial-yellow.png'); }
+
+.wCheck-theme-circle-classic-red { background-image: url('./img/circle-classic-red.png'); }
+.wCheck-theme-circle-classic-green { background-image: url('./img/circle-classic-green.png'); }
+.wCheck-theme-circle-classic-blue { background-image: url('./img/circle-classic-blue.png'); }
+.wCheck-theme-circle-classic-yellow { background-image: url('./img/circle-classic-yellow.png'); }
+.wCheck-theme-circle-inset-red { background-image: url('./img/circle-inset-red.png'); }
+.wCheck-theme-circle-inset-green { background-image: url('./img/circle-inset-green.png'); }
+.wCheck-theme-circle-inset-blue { background-image: url('./img/circle-inset-blue.png'); }
+.wCheck-theme-circle-inset-yellow { background-image: url('./img/circle-inset-yellow.png'); }
+.wCheck-theme-circle-radial-red { background-image: url('./img/circle-radial-red.png'); }
+.wCheck-theme-circle-radial-green { background-image: url('./img/circle-radial-green.png'); }
+.wCheck-theme-circle-radial-blue { background-image: url('./img/circle-radial-blue.png'); }
+.wCheck-theme-circle-radial-yellow { background-image: url('./img/circle-radial-yellow.png'); }
+
+.wCheck-selector-checkmark { background-image: url('./img/selector-checkmark.png'); }
+.wCheck-selector-circle { background-image: url('./img/selector-circle.png'); }
+.wCheck-selector-circle-solid { background-image: url('./img/selector-circle-solid.png'); }
+.wCheck-selector-cross { background-image: url('./img/selector-cross.png'); }
+.wCheck-selector-plus { background-image: url('./img/selector-plus.png'); }
+.wCheck-selector-square { background-image: url('./img/selector-square.png'); }
+.wCheck-selector-square-solid { background-image: url('./img/selector-square-solid.png'); }
+.wCheck-selector-triangle { background-image: url('./img/selector-triangle.png'); }
+.wCheck-selector-circle-dot-blue { background-image: url('./img/selector-circle-dot-blue.png'); }
+.wCheck-selector-circle-dot-red { background-image: url('./img/selector-circle-dot-red.png'); }
+.wCheck-selector-circle-dot-green { background-image: url('./img/selector-circle-dot-green.png'); }
+.wCheck-selector-circle-dot-yellow { background-image: url('./img/selector-circle-dot-yellow.png'); }
+.wCheck-selector-square-dot-blue { background-image: url('./img/selector-square-dot-blue.png'); }
+.wCheck-selector-square-dot-red { background-image: url('./img/selector-square-dot-red.png'); }
+.wCheck-selector-square-dot-green { background-image: url('./img/selector-square-dot-green.png'); }
+.wCheck-selector-square-dot-yellow { background-image: url('./img/selector-square-dot-yellow.png'); }
+
+/***********************************
+ * Labels
+ ***********************************/
+.wLabel-top,
+.wLabel-left,
+.wLabel-left-top {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    margin-bottom: 7px;
+    font-size: 10px;
+    line-height: 16px;
+    color: #999;
+}
+.wLabel-left,
+.wLabel-left-top {
+    width: 70px;
+    text-align: right;
+}
+.wLabel-top {
+    display: block;
+    margin: 0 0 0 3px;
+}
+.wLabel-left-top {
+    vertical-align: top;
+    margin-top: 3px;
+}
+

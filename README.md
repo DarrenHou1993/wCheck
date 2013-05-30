@@ -17,11 +17,21 @@ Available options with notes, the values here are the defaults.
 
 ```js
 $.fn.wCheck.defaults = {
-    theme: './img/square-classic-blue.png',   // background image to use
-    selector: './img/selector-checkmark.png', // selector image to use
-    mode: 'checkbox',                         // two modes, checkbox or radio
-    width: 16,                                // width of check/check
-    height: 16                                // height of check/check
+    theme: 'square-classic-blue',   // theme
+    selector: 'checkmark',          // selector
+    useExistingLabel: true,         // if there is a for="id" matching use it
+    highlightLabel: false           // toggle highlighting active/hover label
+};
+```
+
+Note that you can set defaults for wCheck and wRadio separately.
+
+```js
+$.fn.wRadio.defaults = {
+    theme: 'circle-classic-blue',   // theme
+    selector: 'circle-dot-blue',    // selector
+    useExistingLabel: true,         // if there is a for="id" matching use it
+    highlightLabel: false           // toggle highlighting active/hover label
 };
 ```
 
@@ -42,32 +52,75 @@ $('input:radio').wRadio();
 $('input:checkbox').wCheck();
 ```
 
-Set your own theme and selector by specifying the paths to the images.  Note that the theme image is comprised of two images for _off_ and _hover_ state.  These images should be of the same size with the hover state below the off state.  Just look in the `img` folder of this plugin for samples.  Also don't forget to set the size if using dimensions other than 16px by 16px
+### themes
+
+Set your own theme and selector by specifying the paths to the images.  Note that the theme image is comprised of two images for _off_ and _hover_ state.  These images should be of the same size with the hover state below the off state.  Just look in the `img` folder of this plugin for samples.  Also don't forget to set the size if using dimensions other than 16px by 16px.
 
 ```js
 $('input:radio').wRadio({
-    theme: '/path/to/myTheme.png',
-    selector: '/path/to/mySelector.png',
-    width: 16,
-    height 16
+    theme: 'circle-classic-green',
+    selector: 'circle-solid'
+});
+
+$('input:checkbox').wCheck({
+    theme: 'square-radial-yellow',
+    selector: 'cross'
 });
 ```
 
-You can also optionally set a `label` attribute for the radio and checkbox elements and the plugin will create a nicely formatted clickable label for each option.  This can be done by setting the `data-label` attribute.
+### labels
+
+You can optionally set a `label` attribute for the radio and checkbox elements and the plugin will create a nicely formatted clickable label for each option.  This can be done by setting the `data-label` attribute.
 
 ```html
-<input type="check" name="question1" value="yes" data-label="Yes, I would like to subscribe"/>
-<input type="check" name="question1" value="no" data-label="No, I don't want to subscribe"/>
+<input type="check" name="gender" value="male" data-label="Male"/>
+<input type="check" name="gender" value="female" data-label="Female"/>
 ```
 
-One thing that should be avoided is manually setting or removing the `checked` attribute.  For this there are two helper functions that can be used to set and reset the `checked` attribute programatically.
+Note that you can also set your own lables and they will still work as expected.  The above `data-label` attribute only serves as a little shortcut to avoid having to type out an `id` and `label` for radio and checkbox.
+
+```html
+<input id="gender-male" type="check" name="gender" value="male"/><label for="gender-male">Male</label>
+<input id="gender-female" type="check" name="gender" value="female"/><label for="gender-female">Female</label>
+```
+
+There is also a `boolean` option named `useExistingLabel` that can be used to set whether you want to attach the label as part of the radio plugin or just leave it as is.
+
+```js
+$.fn.wRadio.defaults = {
+    ...
+    useExistingLabel: true,
+    ...
+};
+```
+
+One final option for the label is named `highlightLabel` that allows you to toggle whether the label will highlight when in `hover` or `on` states.
+
+```js
+$.fn.wCheck.defaults = {
+    ...
+    highlightLabel: true,
+    ...
+};
+```
+
+### manual control
+
+One thing that should be avoided is manually setting or removing the `checked` attribute.  For this use the `check` method and pass in either `true` or `false`.
 
 ```js
 $('#radio1').wRadio('check', true);
 $('#checkbox1').wCheck('check', false);
+```
 
-$('input:radio').wRadio('reset');
-$('input:checkbox').wCheck('reset');
+If you absolutely have to do it manually you will need to trigger a `click` event after your change for the plugin to register the visual change.
+
+### CSS labels
+
+Global CSS labels are also available in this plugin and can be used by setting an adding the class name `wLabel-left`, `wLabel-top` or `wLabel-left-top` to an element.
+
+```html
+<label class="wLabel-left">Label:</label>
 ```
 
 

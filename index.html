@@ -55,212 +55,202 @@
                 <script type="text/javascript" src="./wCheck.js"></script>
                 <link rel="Stylesheet" type="text/css" href="./wCheck.css" />
 
-                <!-- demo styles -->
-                <style>
-                    table td.left {
-                        vertical-align: top;
-                        text-align: right;
-                        font-size: 10px;
-                        color: #9A9A9A;
-                    }
+                <!-- default -->
+                <label class="wLabel-left">Default:</label>
+                <input type="radio" name="radio-test" value="one" checked="checked" /><label>one</label>
+                <input type="radio" name="radio-test" value="two" /><label>two</label>
+                <input type="radio" name="radio-test" value="three" /><label>three</label>
+                <input type="radio" name="radio-test" value="four" /><label>four</label>
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" name="checkbox-test" checked="checked" /><label>one</label>
+                <input type="checkbox" name="checkbox-test" /><label>two</label>
+                <input type="checkbox" name="checkbox-test" checked="checked"/><label>three</label>
+                <input type="checkbox" name="checkbox-test" /><label>four</label>
+                <br/><br/>
 
-                    table td.right {
-                        padding: 0 0 30px 10px;
-                    }
+                <!-- classic -->
+                <label class="wLabel-left">Classic:</label>
+                <input id="radio-test1_1" type="radio" name="radio-test1" value="one" checked="checked" /><label for="radio-test1_1">one</label>
+                <input id="radio-test1_2" type="radio" name="radio-test1" value="two" /><label for="radio-test1_2">two</label>
+                <input id="radio-test1_3" type="radio" name="radio-test1" value="three" /><label for="radio-test1_3">three</label>
+                <input id="radio-test1_4" type="radio" name="radio-test1" value="four" /><label for="radio-test1_4">four</label>
+                <br/>
+                <label class="wLabel-left"></label>
+                <input id="radio-test2_1" type="radio" name="radio-test2" value="one" /><label for="radio-test2_1">one</label>
+                <input id="radio-test2_2" type="radio" name="radio-test2" value="two" checked="checked" /><label for="radio-test2_2">two</label>
+                <input id="radio-test2_3" type="radio" name="radio-test2" value="three" /><label for="radio-test2_3">three</label>
+                <input id="radio-test2_4" type="radio" name="radio-test2" value="four" /><label for="radio-test2_4">four</label>
+                <br/>
+                <label class="wLabel-left"></label>
+                <input id="radio-test3_1" type="radio" name="radio-test3" value="one" /><label for="radio-test3_1">one</label>
+                <input id="radio-test3_2" type="radio" name="radio-test3" value="two" /><label for="radio-test3_2">two</label>
+                <input id="radio-test3_3" type="radio" name="radio-test3" value="three" checked="checked" /><label for="radio-test3_3">three</label>
+                <input id="radio-test3_4" type="radio" name="radio-test3" value="four" /><label for="radio-test3_4">four</label>
+                <br/>
+                <label class="wLabel-left"></label>
+                <input id="radio-test4_1" type="radio" name="radio-test4" value="one" /><label for="radio-test4_1">one</label>
+                <input id="radio-test4_2" type="radio" name="radio-test4" value="two" /><label for="radio-test4_2">two</label>
+                <input id="radio-test4_3" type="radio" name="radio-test4" value="three" /><label for="radio-test4_3">three</label>
+                <input id="radio-test4_4" type="radio" name="radio-test4" value="four" checked="checked" /><label for="radio-test4_4">four</label>
+                <br/><br/>
 
-                    table td.right.last {
-                        padding-bottom: 0px;
-                    }
+                <label class="wLabel-left"></label>
+                <input id="checkbox-test1_1" type="checkbox" class="checkbox-test1" checked="checked" /><label for="checkbox-test1_1">one</label>
+                <input id="checkbox-test1_2" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_2">two</label>
+                <input id="checkbox-test1_3" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_3">three</label>
+                <input id="checkbox-test1_4" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_4">four</label>
+                <br/>
+                <label class="wLabel-left"></label>
+                <input id="checkbox-test2_1" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_1">one</label>
+                <input id="checkbox-test2_2" type="checkbox" class="checkbox-test2" checked="checked" /><label for="checkbox-test2_2">two</label>
+                <input id="checkbox-test2_3" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_3">three</label>
+                <input id="checkbox-test2_4" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_4">four</label>
+                <br/>
+                <label class="wLabel-left"></label>
+                <input id="checkbox-test3_1" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_1">one</label>
+                <input id="checkbox-test3_2" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_2">two</label>
+                <input id="checkbox-test3_3" type="checkbox" class="checkbox-test3" checked="checked" /><label for="checkbox-test3_3">three</label>
+                <input id="checkbox-test3_4" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_4">four</label>
+                <br/>
+                <label class="wLabel-left"></label>
+                <input id="checkbox-test4_1" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_1">one</label>
+                <input id="checkbox-test4_2" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_2">two</label>
+                <input id="checkbox-test4_3" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_3">three</label>
+                <input id="checkbox-test4_4" type="checkbox" class="checkbox-test4" checked="checked" /><label for="checkbox-test4_4">four</label>
+                <br/><br/>
 
-                    label {
-                        display: inline-block;
-                        *display: inline;
-                        zoom: 1;
-                        line-height: 16px;
-                        height: 16px;
-                        vertical-align: middle;
-                        margin-right: 10px;
-                        cursor: pointer;
-                        font-size: 10px;
-                        color: #666;
-                    }
-                </style>
+                <!-- radial -->
+                <label class="wLabel-left">Radial:</label>
+                <input type="radio" name="radio-test5" value="one" data-label="one" checked="checked" />
+                <input type="radio" name="radio-test5" value="two" data-label="two" />
+                <input type="radio" name="radio-test5" value="three" data-label="three" />
+                <input type="radio" name="radio-test5" value="four" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="radio" name="radio-test6" value="one" data-label="one" />
+                <input type="radio" name="radio-test6" value="two" data-label="two" checked="checked" />
+                <input type="radio" name="radio-test6" value="three" data-label="three" />
+                <input type="radio" name="radio-test6" value="four" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="radio" name="radio-test7" value="one" data-label="one" />
+                <input type="radio" name="radio-test7" value="two" data-label="two" />
+                <input type="radio" name="radio-test7" value="three" data-label="three" checked="checked" />
+                <input type="radio" name="radio-test7" value="four" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="radio" name="radio-test8" value="one" data-label="one" />
+                <input type="radio" name="radio-test8" value="two" data-label="two" />
+                <input type="radio" name="radio-test8" value="three" data-label="three" />
+                <input type="radio" name="radio-test8" value="four" data-label="four" checked="checked" />
+                <br/><br/>
 
-                <table><tr>
-                    <td class="left">Default:</td>
-                    <td class="right">
-                        <input type="radio" name="radio-test" value="one" checked="checked" /> <label>one</label>
-                        <input type="radio" name="radio-test" value="two" /> <label>two</label>
-                        <input type="radio" name="radio-test" value="three" /> <label>three</label>
-                        <input type="radio" name="radio-test" value="four" /> <label>four</label>
-                        <br/><br/>
-                        <input type="checkbox" name="checkbox-test" checked="checked" /> <label>one</label>
-                        <input type="checkbox" name="checkbox-test" /> <label>two</label>
-                        <input type="checkbox" name="checkbox-test" checked="checked"/> <label>three</label>
-                        <input type="checkbox" name="checkbox-test" /> <label>four</label>
-                    </td>
-                </tr><tr>
-                    <td class="left">Classic:</td>
-                    <td class="right">
-                        <input id="radio-test1_1" type="radio" name="radio-test1" value="one" checked="checked" /> <label for="radio-test1_1">one</label>
-                        <input id="radio-test1_2" type="radio" name="radio-test1" value="two" /> <label for="radio-test1_2">two</label>
-                        <input id="radio-test1_3" type="radio" name="radio-test1" value="three" /> <label for="radio-test1_3">three</label>
-                        <input id="radio-test1_4" type="radio" name="radio-test1" value="four" /> <label for="radio-test1_4">four</label>
-                        <br/><br/>
-                        <input id="radio-test2_1" type="radio" name="radio-test2" value="one" /> <label for="radio-test2_1">one</label>
-                        <input id="radio-test2_2" type="radio" name="radio-test2" value="two" checked="checked" /> <label for="radio-test2_2">two</label>
-                        <input id="radio-test2_3" type="radio" name="radio-test2" value="three" /> <label for="radio-test2_3">three</label>
-                        <input id="radio-test2_4" type="radio" name="radio-test2" value="four" /> <label for="radio-test2_4">four</label>
-                        <br/><br/>
-                        <input id="radio-test3_1" type="radio" name="radio-test3" value="one" /> <label for="radio-test3_1">one</label>
-                        <input id="radio-test3_2" type="radio" name="radio-test3" value="two" /> <label for="radio-test3_2">two</label>
-                        <input id="radio-test3_3" type="radio" name="radio-test3" value="three" checked="checked" /> <label for="radio-test3_3">three</label>
-                        <input id="radio-test3_4" type="radio" name="radio-test3" value="four" /> <label for="radio-test3_4">four</label>
-                        <br/><br/>
-                        <input id="radio-test4_1" type="radio" name="radio-test4" value="one" /> <label for="radio-test4_1">one</label>
-                        <input id="radio-test4_2" type="radio" name="radio-test4" value="two" /> <label for="radio-test4_2">two</label>
-                        <input id="radio-test4_3" type="radio" name="radio-test4" value="three" /> <label for="radio-test4_3">three</label>
-                        <input id="radio-test4_4" type="radio" name="radio-test4" value="four" checked="checked" /> <label for="radio-test4_4">four</label>
-                        <br/><br/>
-                        <input id="checkbox-test1_1" type="checkbox" class="checkbox-test1" checked="checked" /> <label for="checkbox-test1_1">one</label>
-                        <input id="checkbox-test1_2" type="checkbox" class="checkbox-test1" /> <label for="checkbox-test1_2">two</label>
-                        <input id="checkbox-test1_3" type="checkbox" class="checkbox-test1" /> <label for="checkbox-test1_3">three</label>
-                        <input id="checkbox-test1_4" type="checkbox" class="checkbox-test1" /> <label for="checkbox-test1_4">four</label>
-                        <br/><br/>
-                        <input id="checkbox-test2_1" type="checkbox" class="checkbox-test2" /> <label for="checkbox-test2_1">one</label>
-                        <input id="checkbox-test2_2" type="checkbox" class="checkbox-test2" checked="checked" /> <label for="checkbox-test2_2">two</label>
-                        <input id="checkbox-test2_3" type="checkbox" class="checkbox-test2" /> <label for="checkbox-test2_3">three</label>
-                        <input id="checkbox-test2_4" type="checkbox" class="checkbox-test2" /> <label for="checkbox-test2_4">four</label>
-                        <br/><br/>
-                        <input id="checkbox-test3_1" type="checkbox" class="checkbox-test3" /> <label for="checkbox-test3_1">one</label>
-                        <input id="checkbox-test3_2" type="checkbox" class="checkbox-test3" /> <label for="checkbox-test3_2">two</label>
-                        <input id="checkbox-test3_3" type="checkbox" class="checkbox-test3" checked="checked" /> <label for="checkbox-test3_3">three</label>
-                        <input id="checkbox-test3_4" type="checkbox" class="checkbox-test3" /> <label for="checkbox-test3_4">four</label>
-                        <br/><br/>
-                        <input id="checkbox-test4_1" type="checkbox" class="checkbox-test4" /> <label for="checkbox-test4_1">one</label>
-                        <input id="checkbox-test4_2" type="checkbox" class="checkbox-test4" /> <label for="checkbox-test4_2">two</label>
-                        <input id="checkbox-test4_3" type="checkbox" class="checkbox-test4" /> <label for="checkbox-test4_3">three</label>
-                        <input id="checkbox-test4_4" type="checkbox" class="checkbox-test4" checked="checked" /> <label for="checkbox-test4_4">four</label>
-                    </td>
-                </tr><tr>
-                    <td class="left">Radial:</td>
-                    <td class="right">
-                        <input type="radio" name="radio-test5" value="one" data-label="one" checked="checked" />
-                        <input type="radio" name="radio-test5" value="two" data-label="two" />
-                        <input type="radio" name="radio-test5" value="three" data-label="three" />
-                        <input type="radio" name="radio-test5" value="four" data-label="four" />
-                        <br/><br/>
-                        <input type="radio" name="radio-test6" value="one" data-label="one" />
-                        <input type="radio" name="radio-test6" value="two" data-label="two" checked="checked" />
-                        <input type="radio" name="radio-test6" value="three" data-label="three" />
-                        <input type="radio" name="radio-test6" value="four" data-label="four" />
-                        <br/><br/>
-                        <input type="radio" name="radio-test7" value="one" data-label="one" />
-                        <input type="radio" name="radio-test7" value="two" data-label="two" />
-                        <input type="radio" name="radio-test7" value="three" data-label="three" checked="checked" />
-                        <input type="radio" name="radio-test7" value="four" data-label="four" />
-                        <br/><br/>
-                        <input type="radio" name="radio-test8" value="one" data-label="one" />
-                        <input type="radio" name="radio-test8" value="two" data-label="two" />
-                        <input type="radio" name="radio-test8" value="three" data-label="three" />
-                        <input type="radio" name="radio-test8" value="four" data-label="four" checked="checked" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test5" data-label="one" checked="checked" />
-                        <input type="checkbox" class="checkbox-test5" data-label="two" />
-                        <input type="checkbox" class="checkbox-test5" data-label="three" />
-                        <input type="checkbox" class="checkbox-test5" data-label="four" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test6" data-label="one" />
-                        <input type="checkbox" class="checkbox-test6" data-label="two" checked="checked" />
-                        <input type="checkbox" class="checkbox-test6" data-label="three" />
-                        <input type="checkbox" class="checkbox-test6" data-label="four" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test7" data-label="one" />
-                        <input type="checkbox" class="checkbox-test7" data-label="two" />
-                        <input type="checkbox" class="checkbox-test7" data-label="three" checked="checked" />
-                        <input type="checkbox" class="checkbox-test7" data-label="four" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test8" data-label="one" />
-                        <input type="checkbox" class="checkbox-test8" data-label="two" />
-                        <input type="checkbox" class="checkbox-test8" data-label="three" />
-                        <input type="checkbox" class="checkbox-test8" data-label="four" checked="checked" />
-                        
-                    </td>
-                </tr><tr>
-                    <td class="left">Inset:</td>
-                    <td class="right last">
-                        <input type="radio" name="radio-test9" value="one" data-label="one" checked="checked" />
-                        <input type="radio" name="radio-test9" value="two" data-label="two" />
-                        <input type="radio" name="radio-test9" value="three" data-label="three" />
-                        <input type="radio" name="radio-test9" value="four" data-label="four" />
-                        <br/><br/>
-                        <input type="radio" name="radio-test10" value="one" data-label="one" />
-                        <input type="radio" name="radio-test10" value="two" data-label="two" checked="checked" />
-                        <input type="radio" name="radio-test10" value="three" data-label="three" />
-                        <input type="radio" name="radio-test10" value="four" data-label="four" />
-                        <br/><br/>
-                        <input type="radio" name="radio-test11" value="one" data-label="one" />
-                        <input type="radio" name="radio-test11" value="two" data-label="two" />
-                        <input type="radio" name="radio-test11" value="three" data-label="three" checked="checked" />
-                        <input type="radio" name="radio-test11" value="four" data-label="four" />
-                        <br/><br/>
-                        <input type="radio" name="radio-test12" value="one" data-label="one" />
-                        <input type="radio" name="radio-test12" value="two" data-label="two" />
-                        <input type="radio" name="radio-test12" value="three" data-label="three" />
-                        <input type="radio" name="radio-test12" value="four" data-label="four" checked="checked" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test9" data-label="one" checked="checked" />
-                        <input type="checkbox" class="checkbox-test9" data-label="two" />
-                        <input type="checkbox" class="checkbox-test9" data-label="three" />
-                        <input type="checkbox" class="checkbox-test9" data-label="four" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test10" data-label="one" />
-                        <input type="checkbox" class="checkbox-test10" data-label="two" checked="checked" />
-                        <input type="checkbox" class="checkbox-test10" data-label="three"/>
-                        <input type="checkbox" class="checkbox-test10" data-label="four" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test11" data-label="one" />
-                        <input type="checkbox" class="checkbox-test11" data-label="two" />
-                        <input type="checkbox" class="checkbox-test11" data-label="three" checked="checked" />
-                        <input type="checkbox" class="checkbox-test11" data-label="four" />
-                        <br/><br/>
-                        <input type="checkbox" class="checkbox-test12" data-label="one" />
-                        <input type="checkbox" class="checkbox-test12" data-label="two" />
-                        <input type="checkbox" class="checkbox-test12" data-label="three" />
-                        <input type="checkbox" class="checkbox-test12" data-label="four" checked="checked" />
-                    </td>
-                </tr></table>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test5" data-label="one" checked="checked" />
+                <input type="checkbox" class="checkbox-test5" data-label="two" />
+                <input type="checkbox" class="checkbox-test5" data-label="three" />
+                <input type="checkbox" class="checkbox-test5" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test6" data-label="one" />
+                <input type="checkbox" class="checkbox-test6" data-label="two" checked="checked" />
+                <input type="checkbox" class="checkbox-test6" data-label="three" />
+                <input type="checkbox" class="checkbox-test6" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test7" data-label="one" />
+                <input type="checkbox" class="checkbox-test7" data-label="two" />
+                <input type="checkbox" class="checkbox-test7" data-label="three" checked="checked" />
+                <input type="checkbox" class="checkbox-test7" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test8" data-label="one" />
+                <input type="checkbox" class="checkbox-test8" data-label="two" />
+                <input type="checkbox" class="checkbox-test8" data-label="three" />
+                <input type="checkbox" class="checkbox-test8" data-label="four" checked="checked" />
+                <br/><br/>
+
+                <!-- inset -->
+                <label class="wLabel-left">Inset:</label>
+                <input type="radio" name="radio-test9" value="one" data-label="one" checked="checked" />
+                <input type="radio" name="radio-test9" value="two" data-label="two" />
+                <input type="radio" name="radio-test9" value="three" data-label="three" />
+                <input type="radio" name="radio-test9" value="four" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="radio" name="radio-test10" value="one" data-label="one" />
+                <input type="radio" name="radio-test10" value="two" data-label="two" checked="checked" />
+                <input type="radio" name="radio-test10" value="three" data-label="three" />
+                <input type="radio" name="radio-test10" value="four" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="radio" name="radio-test11" value="one" data-label="one" />
+                <input type="radio" name="radio-test11" value="two" data-label="two" />
+                <input type="radio" name="radio-test11" value="three" data-label="three" checked="checked" />
+                <input type="radio" name="radio-test11" value="four" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="radio" name="radio-test12" value="one" data-label="one" />
+                <input type="radio" name="radio-test12" value="two" data-label="two" />
+                <input type="radio" name="radio-test12" value="three" data-label="three" />
+                <input type="radio" name="radio-test12" value="four" data-label="four" checked="checked" />
+                <br/><br/>
+
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test9" data-label="one" checked="checked" />
+                <input type="checkbox" class="checkbox-test9" data-label="two" />
+                <input type="checkbox" class="checkbox-test9" data-label="three" />
+                <input type="checkbox" class="checkbox-test9" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test10" data-label="one" />
+                <input type="checkbox" class="checkbox-test10" data-label="two" checked="checked" />
+                <input type="checkbox" class="checkbox-test10" data-label="three"/>
+                <input type="checkbox" class="checkbox-test10" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test11" data-label="one" />
+                <input type="checkbox" class="checkbox-test11" data-label="two" />
+                <input type="checkbox" class="checkbox-test11" data-label="three" checked="checked" />
+                <input type="checkbox" class="checkbox-test11" data-label="four" />
+                <br/>
+                <label class="wLabel-left"></label>
+                <input type="checkbox" class="checkbox-test12" data-label="one" />
+                <input type="checkbox" class="checkbox-test12" data-label="two" />
+                <input type="checkbox" class="checkbox-test12" data-label="three" />
+                <input type="checkbox" class="checkbox-test12" data-label="four" checked="checked" />
                 
                 <script type="text/javascript">
-                    $('input:radio[name=radio-test1]').wRadio({theme: './img/circle-classic-red.png', selector: './img/selector-circle-dot-red.png'});
-                    $('input:radio[name=radio-test2]').wRadio({theme: './img/circle-classic-green.png', selector: './img/selector-circle-dot-green.png'});
-                    $('input:radio[name=radio-test3]').wRadio({theme: './img/circle-classic-blue.png', selector: './img/selector-circle-dot-blue.png'});
-                    $('input:radio[name=radio-test4]').wRadio({theme: './img/circle-classic-yellow.png', selector: './img/selector-circle-dot-yellow.png'});
+                    $('input:radio[name=radio-test1]').wRadio({theme: 'circle-classic-red', selector: 'circle-dot-red'});
+                    $('input:radio[name=radio-test2]').wRadio({theme: 'circle-classic-green', selector: 'circle-dot-green'});
+                    $('input:radio[name=radio-test3]').wRadio({theme: 'circle-classic-blue', selector: 'circle-dot-blue'});
+                    $('input:radio[name=radio-test4]').wRadio({theme: 'circle-classic-yellow', selector: 'circle-dot-yellow'});
 
-                    $('input.checkbox-test1').wCheck({theme: './img/square-classic-red.png', selector: './img/selector-checkmark.png'});
-                    $('input.checkbox-test2').wCheck({theme: './img/square-classic-green.png', selector: './img/selector-cross.png'});
-                    $('input.checkbox-test3').wCheck({theme: './img/square-classic-blue.png', selector: './img/selector-plus.png'});
-                    $('input.checkbox-test4').wCheck({theme: './img/square-classic-yellow.png', selector: './img/selector-triangle.png'});
+                    $('input.checkbox-test1').wCheck({theme: 'square-classic-red', selector: 'checkmark'});
+                    $('input.checkbox-test2').wCheck({theme: 'square-classic-green', selector: 'cross'});
+                    $('input.checkbox-test3').wCheck({theme: 'square-classic-blue', selector: 'plus'});
+                    $('input.checkbox-test4').wCheck({theme: 'square-classic-yellow', selector: 'triangle'});
                     
-                    $('input:radio[name=radio-test5]').wRadio({theme: './img/circle-radial-red.png', selector: './img/selector-checkmark.png'});
-                    $('input:radio[name=radio-test6]').wRadio({theme: './img/circle-radial-green.png', selector: './img/selector-cross.png'});
-                    $('input:radio[name=radio-test7]').wRadio({theme: './img/circle-radial-blue.png', selector: './img/selector-plus.png'});
-                    $('input:radio[name=radio-test8]').wRadio({theme: './img/circle-radial-yellow.png', selector: './img/selector-triangle.png'});
+                    $('input:radio[name=radio-test5]').wRadio({theme: 'circle-radial-red', selector: 'checkmark'});
+                    $('input:radio[name=radio-test6]').wRadio({theme: 'circle-radial-green', selector: 'cross'});
+                    $('input:radio[name=radio-test7]').wRadio({theme: 'circle-radial-blue', selector: 'plus'});
+                    $('input:radio[name=radio-test8]').wRadio({theme: 'circle-radial-yellow', selector: 'triangle'});
 
-                    $('input.checkbox-test5').wCheck({theme: './img/square-radial-red.png', selector: './img/selector-circle.png'});
-                    $('input.checkbox-test6').wCheck({theme: './img/square-radial-green.png', selector: './img/selector-circle-solid.png'});
-                    $('input.checkbox-test7').wCheck({theme: './img/square-radial-blue.png', selector: './img/selector-square.png'});
-                    $('input.checkbox-test8').wCheck({theme: './img/square-radial-yellow.png', selector: './img/selector-square-solid.png'});
+                    $('input.checkbox-test5').wCheck({theme: 'square-radial-red', selector: 'circle', highlightLabel: true});
+                    $('input.checkbox-test6').wCheck({theme: 'square-radial-green', selector: 'circle-solid', highlightLabel: true});
+                    $('input.checkbox-test7').wCheck({theme: 'square-radial-blue', selector: 'square', highlightLabel: true});
+                    $('input.checkbox-test8').wCheck({theme: 'square-radial-yellow', selector: 'square-solid', highlightLabel: true});
                     
-                    $('input:radio[name=radio-test9]').wRadio({theme: './img/circle-inset-red.png', selector: './img/selector-circle.png'});
-                    $('input:radio[name=radio-test10]').wRadio({theme: './img/circle-inset-green.png', selector: './img/selector-circle-solid.png'});
-                    $('input:radio[name=radio-test11]').wRadio({theme: './img/circle-inset-blue.png', selector: './img/selector-square.png'});
-                    $('input:radio[name=radio-test12]').wRadio({theme: './img/circle-inset-yellow.png', selector: './img/selector-square-solid.png'});
+                    $('input:radio[name=radio-test9]').wRadio({theme: 'circle-inset-red', selector: 'circle', highlightLabel: true});
+                    $('input:radio[name=radio-test10]').wRadio({theme: 'circle-inset-green', selector: 'circle-solid', highlightLabel: true});
+                    $('input:radio[name=radio-test11]').wRadio({theme: 'circle-inset-blue', selector: 'square', highlightLabel: true});
+                    $('input:radio[name=radio-test12]').wRadio({theme: 'circle-inset-yellow', selector: 'square-solid', highlightLabel: true});
 
-                    $('input.checkbox-test9').wCheck({theme: './img/square-inset-red.png', selector: './img/selector-square-dot-red.png'});
-                    $('input.checkbox-test10').wCheck({theme: './img/square-inset-green.png', selector: './img/selector-square-dot-green.png'});
-                    $('input.checkbox-test11').wCheck({theme: './img/square-inset-blue.png', selector: './img/selector-square-dot-blue.png'});
-                    $('input.checkbox-test12').wCheck({theme: './img/square-inset-yellow.png', selector: './img/selector-square-dot-yellow.png'});
+                    $('input.checkbox-test9').wCheck({theme: 'square-inset-red', selector: 'square-dot-red', highlightLabel: true});
+                    $('input.checkbox-test10').wCheck({theme: 'square-inset-green', selector: 'square-dot-green', highlightLabel: true});
+                    $('input.checkbox-test11').wCheck({theme: 'square-inset-blue', selector: 'square-dot-blue', highlightLabel: true});
+                    $('input.checkbox-test12').wCheck({theme: 'square-inset-yellow', selector: 'square-dot-yellow', highlightLabel: true});
                 </script>
             </div>
 
