@@ -8,7 +8,7 @@
  * @license         This websanova wCheck jQuery plug-in is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/wCheck
- * @version         Version 1.1.0
+ * @version         Version 1.1.1
  *
  ******************************************/
 
