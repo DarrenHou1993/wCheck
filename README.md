@@ -5,11 +5,14 @@ A jQuery plugin for fully customizable `checkbox` and `radio` input options.  Th
 * [View the wCheck demo](http://wcheck.websanova.com)
 * [Download the lastest version of wCheck](https://github.com/websanova/wCheck/tags)
 
+
 ## Related Plugins
 
+* [wForm](http://wform.websanova.com) - See all the form plugins working together.
 * [wSelect](http://wselect.websanova.com) - Custom select boxes.
 * [wInput](http://winput.websanova.com) - Input plugin that handles backwards compatability for placeholders.
 * [wChar](http://wchar.websanova.com) - On the fly character counter for inputs.
+
 
 ## Settings
 
