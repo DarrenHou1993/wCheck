@@ -1,17 +1,3 @@
-/******************************************
- * Websanova.com
- *
- * Resources for web entrepreneurs
- *
- * @author          Websanova
- * @copyright       Copyright (c) 2012 Websanova.
- * @license         This websanova wCheck jQuery plug-in is dual licensed under the MIT and GPL licenses.
- * @link            http://www.websanova.com
- * @github          http://github.com/websanova/wCheck
- * @version         Version 1.1.1
- *
- ******************************************/
-
 (function($) {
     
     function Check(el, options) {
@@ -23,7 +9,7 @@
         this.checked = false;
 
         this.generate();
-    };
+    }
     
     Check.prototype = {
         generate: function() {
