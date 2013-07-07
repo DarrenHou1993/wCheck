@@ -2,6 +2,8 @@
 
 A jQuery plugin for fully customizable `checkbox` and `radio` input options.  The plugin uses images for background themes and selectors to allow for compatability with more browsers.  Applying this plugin will not effect any existing functionality on your radio and checkbox inputs and you should still be able to fire any existing events already created on them.
 
+The plugin works by overlaying the original `checkbox` and `radio` on top of the image to retain any functionality that may exist on the elements such as title tags or tab indexing.
+
 * [View the wCheck demo](http://wcheck.websanova.com)
 * [Download the lastest version of wCheck](https://github.com/websanova/wCheck/tags)
 
