@@ -7,6 +7,7 @@
         this.mode = this.$el.prop('type').toLowerCase();
         this.name = '';
         this.checked = false;
+        this.focus = false;
 
         this.generate();
     }
@@ -22,15 +23,24 @@
 
                 this.$check = $('<div class="wCheck wCheck-off wCheck-mode-' + this.mode + ' ' + (this.mode === 'radio' && this.name ? 'wCheck-name-' + this.name : '') + '"></div>');
                 this.$selector = $('<div class="wCheck-selector"></div>');
-                this.$check.append(this.$selector);
-                this.$el.hide().after(this.$check);
+                this.$focus = $('<div class="wCheck-focus"></div>').hide();
+                this.$check.append(this.$selector).append(this.$focus);
+                this.$el.addClass('wCheck-el').hide().after(this.$check);
+                this.$check.append(this.$el.show().css({opacity:'0'}));
                 
-                this.$el.click(function(){ _self.onClick(); }); // triggers on label click and $check click.  Also triggers any click events on element ($el)
+                this.$el
+                .click(function() { _self.onClick(); }) // triggers on label click and $check click.  Also triggers any click events on element ($el)
+                .focus(function() {
+                    if (_self.focus) { _self.$focus.show(); }
+                })
+                .blur(function() { 
+                    if(_self.focus) { _self.$focus.hide(); }
+                });
+
                 this.$check
-                .click(function(e) { _self.$el.click(); })
                 .hover(
-                    function(){ _self.onFocus(); },
-                    function(){ _self.onBlur(); }
+                    function() { _self.onFocus(); },
+                    function() { _self.onBlur(); }
                 );
 
                 if (this.$el.prop('checked')) { this.setCheck(true); }
@@ -38,6 +48,11 @@
                 this.createLabel(); // make sure this is run before setTheme()
                 this.setTheme(this.options.theme);
                 this.setSelector(this.options.selector);
+
+                // focus is only triggered after `tab` key is pressed: seems to be the way the browser does it
+                $(document).keydown(function(e){
+                    _self.focus = true;
+                });
             }
             return this.$check;
         },
