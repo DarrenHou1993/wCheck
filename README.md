@@ -111,14 +111,27 @@ $.fn.wCheck.defaults = {
 
 ### manual control
 
-One thing that should be avoided is manually setting or removing the `checked` attribute.  For this use the `check` method and pass in either `true` or `false`.
+One thing that should be avoided is manually setting or removing the `checked` attribute as there is no way to register an event for a manual change.  For this use the `check` method and pass in either `true` or `false`.  This will automatically trigger the `change` event for this element if any is set.
 
 ```js
 $('#radio1').wRadio('check', true);
 $('#checkbox1').wCheck('check', false);
 ```
 
-If you absolutely have to do it manually you will need to trigger a `click` event after your change for the plugin to register the visual change.
+If you absolutely have to do it manually on the element itself you will need to trigger a `change` event after your change for the plugin to register the visual change.
+
+```js
+$('input:radio[name=radio-test1]').prop('checked', false).change(); // disable all options in group
+$('#radio-test1_2').prop('checked', true).change(); // enable one option
+```
+
+Note that to capture a change you must set the `change` event on all elements that are clickable.  Meaning if you have for options in a group then all four must have a change event.
+
+```js
+$('input:radio[name=radio-test1]').change(function(){
+    // do something
+});
+```
 
 ### CSS labels
 
