@@ -1,343 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" />
-    <meta name="keywords" content="jquery, plugin, radio, checkbox, option, input" />
-    <meta name="description" content="A jQuery plugin for fully customizable `checkbox` and `radio` input options.  The plugin uses images for background themes and selectors to allow for compatability with more browsers.  Applying this plugin will not effect any existing functionality on your radio and checkbox inputs and you should still be able to fire any existing events already created on them." />
-    <meta name = "owner" content = "Websanova" />
-    <meta property="og:title" content="jQuery Checkbox and Radio Input Plugin"/>
-    <meta property="og:description" content="A jQuery plugin for fully customizable checkbox and radio input options.  You can add your own selectors or checkbox/radio buttons and mix and match them as you like." />
-    <meta property="og:url" content="http://wcheck.websanova.com"/>
-    <meta property="og:image" content="http://www.websanova.com/wp-content/uploads/2013/06/wcheck-jquery-radio-checkbox-plugin.png" />
-    <meta property="og:type" content="article"/>
-    <meta property="og:site_name" content="Websanova"/>
-
-    <title>wCheck :: jQuery Checkbox and Radio Input Plugin</title>
-    
-    <!-- filestart -->
-    <link rel="icon" type="image/vnd.microsoft.icon"  href="./assets/img/favicon.ico" />
-    <script type="text/javascript" src="./assets/jquery.1.9.1.min.js"></script>
-    <link rel="Stylesheet" type="text/css" href="./assets/demo.css" />
-    <!-- fileend -->
+  <meta charset="utf-8">
+  <title>Websanova :: wCheck</title>
+  
+  <!-- filestart -->
+  <link rel="icon" type="image/vnd.microsoft.icon"  href="./demo/img/favicon.ico" />
+  <link rel="Stylesheet" type="text/css" href="./demo/demo.css" />
+  <script type="text/javascript" src="./lib/jquery.1.10.2.min.js"></script>
+  <!-- fileend -->
 </head>
 <body>
-    <!-- headstart -->
-    <header>
-        <a id="header-logo" href="http://websanova.com"></a>
+  <!-- headstart -->
+  <header>
+    <a id="header-logo" href="http://websanova.com"></a>
 
-        <div id="header-links">
-            <a href="http://websanova.com">Home</a>
-            <a href="http://websanova.com/plugins">Plugins</a>
-            <a href="http://websanova.com/extensions">Extensions</a>
-            <a href="http://websanova.com/services">Services</a>
-        </div>
-    </header>
-    <!-- headend -->
-
-    <div id="content">
-        <h1 id="plugin-name">wCheck.js</h1>
-
-        <div id="addthis-toolbox" class="addthis_toolbox addthis_default_style">
-            <a id="github-button" href="https://github.com/websanova/wCheck" target="_blank" title="GitHub"></a>
-            <a class="addthis_button_facebook" addthis:url="http://wcheck.websanova.com" addthis:title="jQuery Checkbox and Radio Input Plugin"></a>
-            <a class="addthis_button_twitter" addthis:url="http://wcheck.websanova.com" addthis:title="jQuery Checkbox and Radio Input Plugin"></a>
-            <a class="addthis_button_google_plusone_share" addthis:url="http://wcheck.websanova.com" addthis:title="jQuery Checkbox and Radio Input Plugin"></a>
-            <a class="addthis_button_reddit" addthis:url="http://wcheck.websanova.com" addthis:title="jQuery Checkbox and Radio Input Plugin"></a>
-            <a class="addthis_button_dzone" addthis:url="http://wcheck.websanova.com" addthis:title="jQuery Checkbox and Radio Input Plugin"></a>
-            <a class="addthis_button_compact" addthis:url="http://wcheck.websanova.com" addthis:title="jQuery Checkbox and Radio Input Plugin"></a>
-        </div>
-
-        <!-- adsstart -->
-        <div id="adsblock">
-            <script type="text/javascript"><!--
-                google_ad_client = "ca-pub-3292441848617055";
-                /* plugin pages */
-                google_ad_slot = "1499872532";
-                google_ad_width = 120;
-                google_ad_height = 600;
-                //-->
-                </script>
-                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-            </script>
-        </div>
-        <!-- adsend -->
-
-        <h2>About</h2>
-
-        <div class="content-box">
-            A jQuery plugin for fully customizable <code>checkbox</code> and <code>radio</code> input options.  You can add your own selectors or checkbox/radio buttons and mix and match them as you like.
-        </div>
-
-        <ul>
-            <li><a href="https://github.com/websanova/wCheck/tags">Download</a></li>
-            <li><a href="https://github.com/websanova/wCheck#wcheckjs">Documentation</a></li>
-        </ul>
-
-        <h2>Related Plugins</h2>
-
-        <ul>
-            <li><a href="http://wselect.websanova.com">wSelect</a> - Custom select boxes.</li>
-            <li><a href="http://winput.websanova.com">wInput</a> - Input plugin that handles backwards compatability for placeholders.</li>
-            <li><a href="http://wchar.websanova.com">wChar</a> - On the fly character counter for inputs.</li>
-        </ul>
-
-        <h2>Demos</h2>
-
-        <script type="text/javascript" src="./wCheck.js"></script>
-        <link rel="Stylesheet" type="text/css" href="./wCheck.css" />
-
-        <div class="content-box">
-            <!-- default -->
-            <label class="wLabel-left">Default:</label>
-            <input type="radio" tabindex="1" name="radio-test" value="one" checked="checked" /><label>one</label>
-            <input type="radio" tabindex="1" name="radio-test" value="two" /><label>two</label>
-            <input type="radio" tabindex="1" name="radio-test" value="three" /><label>three</label>
-            <input type="radio" tabindex="1" name="radio-test" value="four" /><label>four</label>
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="2" name="checkbox-test" checked="checked" /><label>one</label>
-            <input type="checkbox" tabindex="3" name="checkbox-test" /><label>two</label>
-            <input type="checkbox" tabindex="4" name="checkbox-test" checked="checked"/><label>three</label>
-            <input type="checkbox" tabindex="5" name="checkbox-test" /><label>four</label>
-            <br/><br/>
-
-            <!-- classic -->
-            <label class="wLabel-left">Classic:</label>
-            <input id="radio-test1_1" tabindex="6" type="radio" name="radio-test1" value="one" checked="checked" /><label for="radio-test1_1">one</label>
-            <input id="radio-test1_2" tabindex="6" type="radio" name="radio-test1" value="two" /><label for="radio-test1_2">two</label>
-            <input id="radio-test1_3" tabindex="6" type="radio" name="radio-test1" value="three" /><label for="radio-test1_3">three</label>
-            <input id="radio-test1_4" tabindex="6" type="radio" name="radio-test1" value="four" /><label for="radio-test1_4">four</label>
-            <br/>
-            <label class="wLabel-left"></label>
-            <input id="radio-test2_1" tabindex="7" type="radio" name="radio-test2" value="one" /><label for="radio-test2_1">one</label>
-            <input id="radio-test2_2" tabindex="7" type="radio" name="radio-test2" value="two" checked="checked" /><label for="radio-test2_2">two</label>
-            <input id="radio-test2_3" tabindex="7" type="radio" name="radio-test2" value="three" /><label for="radio-test2_3">three</label>
-            <input id="radio-test2_4" tabindex="7" type="radio" name="radio-test2" value="four" /><label for="radio-test2_4">four</label>
-            <br/>
-            <label class="wLabel-left"></label>
-            <input id="radio-test3_1" tabindex="8" type="radio" name="radio-test3" value="one" /><label for="radio-test3_1">one</label>
-            <input id="radio-test3_2" tabindex="8" type="radio" name="radio-test3" value="two" /><label for="radio-test3_2">two</label>
-            <input id="radio-test3_3" tabindex="8" type="radio" name="radio-test3" value="three" checked="checked" /><label for="radio-test3_3">three</label>
-            <input id="radio-test3_4" tabindex="8" type="radio" name="radio-test3" value="four" /><label for="radio-test3_4">four</label>
-            <br/>
-            <label class="wLabel-left"></label>
-            <input id="radio-test4_1" tabindex="9" type="radio" name="radio-test4" value="one" /><label for="radio-test4_1">one</label>
-            <input id="radio-test4_2" tabindex="9" type="radio" name="radio-test4" value="two" /><label for="radio-test4_2">two</label>
-            <input id="radio-test4_3" tabindex="9" type="radio" name="radio-test4" value="three" /><label for="radio-test4_3">three</label>
-            <input id="radio-test4_4" tabindex="9" type="radio" name="radio-test4" value="four" checked="checked" /><label for="radio-test4_4">four</label>
-            <br/><br/>
-
-            <label class="wLabel-left"></label>
-            <input id="checkbox-test1_1" tabindex="10" type="checkbox" class="checkbox-test1" checked="checked" /><label for="checkbox-test1_1">one</label>
-            <input id="checkbox-test1_2" tabindex="11" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_2">two</label>
-            <input id="checkbox-test1_3" tabindex="12" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_3">three</label>
-            <input id="checkbox-test1_4" tabindex="13" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_4">four</label>
-            <br/>
-            <label class="wLabel-left"></label>
-            <input id="checkbox-test2_1" tabindex="14" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_1">one</label>
-            <input id="checkbox-test2_2" tabindex="15" type="checkbox" class="checkbox-test2" checked="checked" /><label for="checkbox-test2_2">two</label>
-            <input id="checkbox-test2_3" tabindex="16" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_3">three</label>
-            <input id="checkbox-test2_4" tabindex="17" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_4">four</label>
-            <br/>
-            <label class="wLabel-left"></label>
-            <input id="checkbox-test3_1" tabindex="18" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_1">one</label>
-            <input id="checkbox-test3_2" tabindex="19" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_2">two</label>
-            <input id="checkbox-test3_3" tabindex="20" type="checkbox" class="checkbox-test3" checked="checked" /><label for="checkbox-test3_3">three</label>
-            <input id="checkbox-test3_4" tabindex="21" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_4">four</label>
-            <br/>
-            <label class="wLabel-left"></label>
-            <input id="checkbox-test4_1" tabindex="22" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_1">one</label>
-            <input id="checkbox-test4_2" tabindex="23" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_2">two</label>
-            <input id="checkbox-test4_3" tabindex="24" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_3">three</label>
-            <input id="checkbox-test4_4" tabindex="25" type="checkbox" class="checkbox-test4" checked="checked" /><label for="checkbox-test4_4">four</label>
-            <br/><br/>
-
-            <!-- radial -->
-            <label class="wLabel-left">Radial:</label>
-            <input type="radio" tabindex="26" name="radio-test5" value="one" data-label="one" checked="checked" />
-            <input type="radio" tabindex="26" name="radio-test5" value="two" data-label="two" />
-            <input type="radio" tabindex="26" name="radio-test5" value="three" data-label="three" />
-            <input type="radio" tabindex="26" name="radio-test5" value="four" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="radio" tabindex="27" name="radio-test6" value="one" data-label="one" />
-            <input type="radio" tabindex="27" name="radio-test6" value="two" data-label="two" checked="checked" />
-            <input type="radio" tabindex="27" name="radio-test6" value="three" data-label="three" />
-            <input type="radio" tabindex="27" name="radio-test6" value="four" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="radio" tabindex="28" name="radio-test7" value="one" data-label="one" />
-            <input type="radio" tabindex="28" name="radio-test7" value="two" data-label="two" />
-            <input type="radio" tabindex="28" name="radio-test7" value="three" data-label="three" checked="checked" />
-            <input type="radio" tabindex="28" name="radio-test7" value="four" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="radio" tabindex="29" name="radio-test8" value="one" data-label="one" />
-            <input type="radio" tabindex="29" name="radio-test8" value="two" data-label="two" />
-            <input type="radio" tabindex="29" name="radio-test8" value="three" data-label="three" />
-            <input type="radio" tabindex="29" name="radio-test8" value="four" data-label="four" checked="checked" />
-            <br/><br/>
-
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="30" class="checkbox-test5" data-label="one" checked="checked" />
-            <input type="checkbox" tabindex="31" class="checkbox-test5" data-label="two" />
-            <input type="checkbox" tabindex="32" class="checkbox-test5" data-label="three" />
-            <input type="checkbox" tabindex="33" class="checkbox-test5" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="34" class="checkbox-test6" data-label="one" />
-            <input type="checkbox" tabindex="35" class="checkbox-test6" data-label="two" checked="checked" />
-            <input type="checkbox" tabindex="36" class="checkbox-test6" data-label="three" />
-            <input type="checkbox" tabindex="37" class="checkbox-test6" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="38" class="checkbox-test7" data-label="one" />
-            <input type="checkbox" tabindex="39" class="checkbox-test7" data-label="two" />
-            <input type="checkbox" tabindex="40" class="checkbox-test7" data-label="three" checked="checked" />
-            <input type="checkbox" tabindex="41" class="checkbox-test7" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="42" class="checkbox-test8" data-label="one" />
-            <input type="checkbox" tabindex="43" class="checkbox-test8" data-label="two" />
-            <input type="checkbox" tabindex="44" class="checkbox-test8" data-label="three" />
-            <input type="checkbox" tabindex="45" class="checkbox-test8" data-label="four" checked="checked" />
-            <br/><br/>
-
-            <!-- inset -->
-            <label class="wLabel-left">Inset:</label>
-            <input type="radio" tabindex="46" name="radio-test9" value="one" data-label="one" checked="checked" />
-            <input type="radio" tabindex="46" name="radio-test9" value="two" data-label="two" />
-            <input type="radio" tabindex="46" name="radio-test9" value="three" data-label="three" />
-            <input type="radio" tabindex="46" name="radio-test9" value="four" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="radio" tabindex="47" name="radio-test10" value="one" data-label="one" />
-            <input type="radio" tabindex="47" name="radio-test10" value="two" data-label="two" checked="checked" />
-            <input type="radio" tabindex="47" name="radio-test10" value="three" data-label="three" />
-            <input type="radio" tabindex="47" name="radio-test10" value="four" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="radio" tabindex="49" name="radio-test11" value="one" data-label="one" />
-            <input type="radio" tabindex="49" name="radio-test11" value="two" data-label="two" />
-            <input type="radio" tabindex="49" name="radio-test11" value="three" data-label="three" checked="checked" />
-            <input type="radio" tabindex="49" name="radio-test11" value="four" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="radio" tabindex="50" name="radio-test12" value="one" data-label="one" />
-            <input type="radio" tabindex="50" name="radio-test12" value="two" data-label="two" />
-            <input type="radio" tabindex="50" name="radio-test12" value="three" data-label="three" />
-            <input type="radio" tabindex="50" name="radio-test12" value="four" data-label="four" checked="checked" />
-            <br/><br/>
-
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="51" class="checkbox-test9" data-label="one" checked="checked" />
-            <input type="checkbox" tabindex="52" class="checkbox-test9" data-label="two" />
-            <input type="checkbox" tabindex="53" class="checkbox-test9" data-label="three" />
-            <input type="checkbox" tabindex="54" class="checkbox-test9" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="55" class="checkbox-test10" data-label="one" />
-            <input type="checkbox" tabindex="56" class="checkbox-test10" data-label="two" checked="checked" />
-            <input type="checkbox" tabindex="57" class="checkbox-test10" data-label="three"/>
-            <input type="checkbox" tabindex="58" class="checkbox-test10" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="59" class="checkbox-test11" data-label="one" />
-            <input type="checkbox" tabindex="60" class="checkbox-test11" data-label="two" />
-            <input type="checkbox" tabindex="61" class="checkbox-test11" data-label="three" checked="checked" />
-            <input type="checkbox" tabindex="62" class="checkbox-test11" data-label="four" />
-            <br/>
-            <label class="wLabel-left"></label>
-            <input type="checkbox" tabindex="63" class="checkbox-test12" data-label="one" />
-            <input type="checkbox" tabindex="64" class="checkbox-test12" data-label="two" />
-            <input type="checkbox" tabindex="65" class="checkbox-test12" data-label="three" />
-            <input type="checkbox" tabindex="66" class="checkbox-test12" data-label="four" checked="checked" />
-        </div>
-
-        <script type="text/javascript">
-            $('input:radio[name=radio-test1]').wRadio({theme: 'circle-classic-red', selector: 'circle-dot-red'});
-            $('input:radio[name=radio-test2]').wRadio({theme: 'circle-classic-green', selector: 'circle-dot-green'});
-            $('input:radio[name=radio-test3]').wRadio({theme: 'circle-classic-blue', selector: 'circle-dot-blue'});
-            $('input:radio[name=radio-test4]').wRadio({theme: 'circle-classic-yellow', selector: 'circle-dot-yellow'});
-
-            $('input.checkbox-test1').wCheck({theme: 'square-classic-red', selector: 'checkmark'});
-            $('input.checkbox-test2').wCheck({theme: 'square-classic-green', selector: 'cross'});
-            $('input.checkbox-test3').wCheck({theme: 'square-classic-blue', selector: 'plus'});
-            $('input.checkbox-test4').wCheck({theme: 'square-classic-yellow', selector: 'triangle'});
-
-            $('input:radio[name=radio-test5]').wRadio({theme: 'circle-radial-red', selector: 'checkmark'});
-            $('input:radio[name=radio-test6]').wRadio({theme: 'circle-radial-green', selector: 'cross'});
-            $('input:radio[name=radio-test7]').wRadio({theme: 'circle-radial-blue', selector: 'plus'});
-            $('input:radio[name=radio-test8]').wRadio({theme: 'circle-radial-yellow', selector: 'triangle'});
-
-            $('input.checkbox-test5').wCheck({theme: 'square-radial-red', selector: 'circle', highlightLabel: true});
-            $('input.checkbox-test6').wCheck({theme: 'square-radial-green', selector: 'circle-solid', highlightLabel: true});
-            $('input.checkbox-test7').wCheck({theme: 'square-radial-blue', selector: 'square', highlightLabel: true});
-            $('input.checkbox-test8').wCheck({theme: 'square-radial-yellow', selector: 'square-solid', highlightLabel: true});
-            
-            $('input:radio[name=radio-test9]').wRadio({theme: 'circle-inset-red', selector: 'circle', highlightLabel: true});
-            $('input:radio[name=radio-test10]').wRadio({theme: 'circle-inset-green', selector: 'circle-solid', highlightLabel: true});
-            $('input:radio[name=radio-test11]').wRadio({theme: 'circle-inset-blue', selector: 'square', highlightLabel: true});
-            $('input:radio[name=radio-test12]').wRadio({theme: 'circle-inset-yellow', selector: 'square-solid', highlightLabel: true});
-
-            $('input.checkbox-test9').wCheck({theme: 'square-inset-red', selector: 'square-dot-red', highlightLabel: true});
-            $('input.checkbox-test10').wCheck({theme: 'square-inset-green', selector: 'square-dot-green', highlightLabel: true});
-            $('input.checkbox-test11').wCheck({theme: 'square-inset-blue', selector: 'square-dot-blue', highlightLabel: true});
-            $('input.checkbox-test12').wCheck({theme: 'square-inset-yellow', selector: 'square-dot-yellow', highlightLabel: true});
-        </script>
-
-        <h2>Resources</h2>
-
-        <!-- resourcestart -->
-        <ul>
-            <li><a href="http://websanova.com/plugins">More jQuery plugins by Websanova</a></li>
-            <li><a href="http://websanova.com/extensions">Websanova JavaScript Extension Project</a></li>
-            <li><a href="http://wboiler.websanova.com">jQuery Plugin Development Boilerplate</a></li>
-            <li><a href="http://www.websanova.com/blog/jquery/the-ultimate-guide-to-writing-jquery-plugins">The Ultimate Guide to Writing jQuery Plugins</a></li>
-        </ul>
-        <!-- resourceend -->
+    <div id="header-links">
+      <a href="http://websanova.com">Blog</a>
+      <a href="http://websanova.com/plugins">Plugins</a>
+      <a href="http://websanova.com/extensions">Extensions</a>
+      <a href="http://websanova.com/services">Services</a>
     </div>
+  </header>
+  <!-- headend -->
 
-    <!-- footerstart -->
-    <footer>
-        <div id="footer-icons">
-            <!--a id="youtube-icon" href="http://websanova.com/youtube" target="_blank"></a-->
-            <a id="stumbleupon-icon" href="http://websanova.com/stumbleupon" target="_blank"></a>
-            <a id="linkedin-icon" href="http://websanova.com/linkedin" target="_blank"></a>
-            <a id="facebook-icon" href="http://websanova.com/facebook" target="_blank"></a>
-            <a id="googleplus-icon" href="http://websanova.com/googleplus" target="_blank"></a>
-            <a id="twitter-icon" href="http://websanova.com/twitter" target="_blank"></a>
-            <a id="github-icon" href="http://websanova.com/github" target="_blank"></a>
-            <a id="rss-icon" href="http://websanova.com/feed" target="_blank"></a>
-        </div>
-    </footer>
+  <div id="content">
+    <h1 id="plugin-name">wCheck.js</h1>
 
-    <script type="text/javascript">
-        if(window.location.protocol === 'file:') $('#addthis-toolbox').hide();
-    </script>
+    <div class="content-box">
+      <!-- classic -->
+      <label class="wLabel-left">Classic:</label>
+      <input id="radio-test1_1" tabindex="6" type="radio" name="radio-test1" value="one" checked="checked" /><label for="radio-test1_1">one</label>
+      <input id="radio-test1_2" tabindex="6" type="radio" name="radio-test1" value="two" /><label for="radio-test1_2">two</label>
+      <input id="radio-test1_3" tabindex="6" type="radio" name="radio-test1" value="three" /><label for="radio-test1_3">three</label>
+      <input id="radio-test1_4" tabindex="6" type="radio" name="radio-test1" value="four" /><label for="radio-test1_4">four</label>
+      <br/>
+      <label class="wLabel-left"></label>
+      <input id="radio-test2_1" tabindex="7" type="radio" name="radio-test2" value="one" /><label for="radio-test2_1">one</label>
+      <input id="radio-test2_2" tabindex="7" type="radio" name="radio-test2" value="two" checked="checked" /><label for="radio-test2_2">two</label>
+      <input id="radio-test2_3" tabindex="7" type="radio" name="radio-test2" value="three" /><label for="radio-test2_3">three</label>
+      <input id="radio-test2_4" tabindex="7" type="radio" name="radio-test2" value="four" /><label for="radio-test2_4">four</label>
+      <br/>
+      <label class="wLabel-left"></label>
+      <input id="radio-test3_1" tabindex="8" type="radio" name="radio-test3" value="one" /><label for="radio-test3_1">one</label>
+      <input id="radio-test3_2" tabindex="8" type="radio" name="radio-test3" value="two" /><label for="radio-test3_2">two</label>
+      <input id="radio-test3_3" tabindex="8" type="radio" name="radio-test3" value="three" checked="checked" /><label for="radio-test3_3">three</label>
+      <input id="radio-test3_4" tabindex="8" type="radio" name="radio-test3" value="four" /><label for="radio-test3_4">four</label>
+      <br/>
+      <label class="wLabel-left"></label>
+      <input id="radio-test4_1" tabindex="9" type="radio" name="radio-test4" value="one" /><label for="radio-test4_1">one</label>
+      <input id="radio-test4_2" tabindex="9" type="radio" name="radio-test4" value="two" /><label for="radio-test4_2">two</label>
+      <input id="radio-test4_3" tabindex="9" type="radio" name="radio-test4" value="three" /><label for="radio-test4_3">three</label>
+      <input id="radio-test4_4" tabindex="9" type="radio" name="radio-test4" value="four" checked="checked" /><label for="radio-test4_4">four</label>
+      <br/><br/>
 
-    <!-- AddThis Button BEGIN -->
-    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-504fdeb9241970a8"></script>
-    <!-- AddThis Button END -->
+      <label class="wLabel-left"></label>
+      <input id="checkbox-test1_1" tabindex="10" type="checkbox" class="checkbox-test1" checked="checked" /><label for="checkbox-test1_1">one</label>
+      <input id="checkbox-test1_2" tabindex="11" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_2">two</label>
+      <input id="checkbox-test1_3" tabindex="12" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_3">three</label>
+      <input id="checkbox-test1_4" tabindex="13" type="checkbox" class="checkbox-test1" /><label for="checkbox-test1_4">four</label>
+      <br/>
+      <label class="wLabel-left"></label>
+      <input id="checkbox-test2_1" tabindex="14" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_1">one</label>
+      <input id="checkbox-test2_2" tabindex="15" type="checkbox" class="checkbox-test2" checked="checked" /><label for="checkbox-test2_2">two</label>
+      <input id="checkbox-test2_3" tabindex="16" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_3">three</label>
+      <input id="checkbox-test2_4" tabindex="17" type="checkbox" class="checkbox-test2" /><label for="checkbox-test2_4">four</label>
+      <br/>
+      <label class="wLabel-left"></label>
+      <input id="checkbox-test3_1" tabindex="18" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_1">one</label>
+      <input id="checkbox-test3_2" tabindex="19" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_2">two</label>
+      <input id="checkbox-test3_3" tabindex="20" type="checkbox" class="checkbox-test3" checked="checked" /><label for="checkbox-test3_3">three</label>
+      <input id="checkbox-test3_4" tabindex="21" type="checkbox" class="checkbox-test3" /><label for="checkbox-test3_4">four</label>
+      <br/>
+      <label class="wLabel-left"></label>
+      <input id="checkbox-test4_1" tabindex="22" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_1">one</label>
+      <input id="checkbox-test4_2" tabindex="23" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_2">two</label>
+      <input id="checkbox-test4_3" tabindex="24" type="checkbox" class="checkbox-test4" /><label for="checkbox-test4_3">three</label>
+      <input id="checkbox-test4_4" tabindex="25" type="checkbox" class="checkbox-test4" checked="checked" /><label for="checkbox-test4_4">four</label>
+      <br/><br/>
 
-    <!-- google analytics -->
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-12380236-11']);
-        _gaq.push(['_trackPageview']);
+      <!-- radial -->
+      <label class="wLabel-left">Radial:</label>
+      <input type="radio" tabindex="26" name="radio-test5" value="one" data-label="one" checked="checked" />
+      <input type="radio" tabindex="26" name="radio-test5" value="two" data-label="two" />
+      <input type="radio" tabindex="26" name="radio-test5" value="three" data-label="three" />
+      <input type="radio" tabindex="26" name="radio-test5" value="four" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="radio" tabindex="27" name="radio-test6" value="one" data-label="one" />
+      <input type="radio" tabindex="27" name="radio-test6" value="two" data-label="two" checked="checked" />
+      <input type="radio" tabindex="27" name="radio-test6" value="three" data-label="three" />
+      <input type="radio" tabindex="27" name="radio-test6" value="four" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="radio" tabindex="28" name="radio-test7" value="one" data-label="one" />
+      <input type="radio" tabindex="28" name="radio-test7" value="two" data-label="two" />
+      <input type="radio" tabindex="28" name="radio-test7" value="three" data-label="three" checked="checked" />
+      <input type="radio" tabindex="28" name="radio-test7" value="four" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="radio" tabindex="29" name="radio-test8" value="one" data-label="one" />
+      <input type="radio" tabindex="29" name="radio-test8" value="two" data-label="two" />
+      <input type="radio" tabindex="29" name="radio-test8" value="three" data-label="three" />
+      <input type="radio" tabindex="29" name="radio-test8" value="four" data-label="four" checked="checked" />
+      <br/><br/>
 
-        var _gaq_rollup = _gaq || [];
-        _gaq_rollup.push(['_setAccount', 'UA-12380236-19']);
-        _gaq_rollup.push(['_trackPageview']);
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="30" class="checkbox-test5" data-label="one" checked="checked" />
+      <input type="checkbox" tabindex="31" class="checkbox-test5" data-label="two" />
+      <input type="checkbox" tabindex="32" class="checkbox-test5" data-label="three" />
+      <input type="checkbox" tabindex="33" class="checkbox-test5" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="34" class="checkbox-test6" data-label="one" />
+      <input type="checkbox" tabindex="35" class="checkbox-test6" data-label="two" checked="checked" />
+      <input type="checkbox" tabindex="36" class="checkbox-test6" data-label="three" />
+      <input type="checkbox" tabindex="37" class="checkbox-test6" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="38" class="checkbox-test7" data-label="one" />
+      <input type="checkbox" tabindex="39" class="checkbox-test7" data-label="two" />
+      <input type="checkbox" tabindex="40" class="checkbox-test7" data-label="three" checked="checked" />
+      <input type="checkbox" tabindex="41" class="checkbox-test7" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="42" class="checkbox-test8" data-label="one" />
+      <input type="checkbox" tabindex="43" class="checkbox-test8" data-label="two" />
+      <input type="checkbox" tabindex="44" class="checkbox-test8" data-label="three" />
+      <input type="checkbox" tabindex="45" class="checkbox-test8" data-label="four" checked="checked" />
+      <br/><br/>
+
+      <!-- inset -->
+      <label class="wLabel-left">Inset:</label>
+      <input type="radio" tabindex="46" name="radio-test9" value="one" data-label="one" checked="checked" />
+      <input type="radio" tabindex="46" name="radio-test9" value="two" data-label="two" />
+      <input type="radio" tabindex="46" name="radio-test9" value="three" data-label="three" />
+      <input type="radio" tabindex="46" name="radio-test9" value="four" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="radio" tabindex="47" name="radio-test10" value="one" data-label="one" />
+      <input type="radio" tabindex="47" name="radio-test10" value="two" data-label="two" checked="checked" />
+      <input type="radio" tabindex="47" name="radio-test10" value="three" data-label="three" />
+      <input type="radio" tabindex="47" name="radio-test10" value="four" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="radio" tabindex="49" name="radio-test11" value="one" data-label="one" />
+      <input type="radio" tabindex="49" name="radio-test11" value="two" data-label="two" />
+      <input type="radio" tabindex="49" name="radio-test11" value="three" data-label="three" checked="checked" />
+      <input type="radio" tabindex="49" name="radio-test11" value="four" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="radio" tabindex="50" name="radio-test12" value="one" data-label="one" />
+      <input type="radio" tabindex="50" name="radio-test12" value="two" data-label="two" />
+      <input type="radio" tabindex="50" name="radio-test12" value="three" data-label="three" />
+      <input type="radio" tabindex="50" name="radio-test12" value="four" data-label="four" checked="checked" />
+      <br/><br/>
+
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="51" class="checkbox-test9" data-label="one" checked="checked" />
+      <input type="checkbox" tabindex="52" class="checkbox-test9" data-label="two" />
+      <input type="checkbox" tabindex="53" class="checkbox-test9" data-label="three" />
+      <input type="checkbox" tabindex="54" class="checkbox-test9" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="55" class="checkbox-test10" data-label="one" />
+      <input type="checkbox" tabindex="56" class="checkbox-test10" data-label="two" checked="checked" />
+      <input type="checkbox" tabindex="57" class="checkbox-test10" data-label="three"/>
+      <input type="checkbox" tabindex="58" class="checkbox-test10" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="59" class="checkbox-test11" data-label="one" />
+      <input type="checkbox" tabindex="60" class="checkbox-test11" data-label="two" />
+      <input type="checkbox" tabindex="61" class="checkbox-test11" data-label="three" checked="checked" />
+      <input type="checkbox" tabindex="62" class="checkbox-test11" data-label="four" />
+      <br/>
+      <label class="wLabel-left"></label>
+      <input type="checkbox" tabindex="63" class="checkbox-test12" data-label="one" />
+      <input type="checkbox" tabindex="64" class="checkbox-test12" data-label="two" />
+      <input type="checkbox" tabindex="65" class="checkbox-test12" data-label="three" />
+      <input type="checkbox" tabindex="66" class="checkbox-test12" data-label="four" checked="checked" />
+
+      <link rel="Stylesheet" type="text/css" href="./wCheck.css" />
+      <script type="text/javascript" src="./wCheck.min.js"></script>
+      
+      <script type="text/javascript">
+        $('input:radio[name=radio-test1]').wRadio({theme: 'circle-classic-red', selector: 'circle-dot-red'});
+        $('input:radio[name=radio-test2]').wRadio({theme: 'circle-classic-green', selector: 'circle-dot-green'});
+        $('input:radio[name=radio-test3]').wRadio({theme: 'circle-classic-blue', selector: 'circle-dot-blue'});
+        $('input:radio[name=radio-test4]').wRadio({theme: 'circle-classic-yellow', selector: 'circle-dot-yellow'});
+
+        $('input.checkbox-test1').wCheck({theme: 'square-classic-red', selector: 'checkmark'});
+        $('input.checkbox-test2').wCheck({theme: 'square-classic-green', selector: 'cross'});
+        $('input.checkbox-test3').wCheck({theme: 'square-classic-blue', selector: 'plus'});
+        $('input.checkbox-test4').wCheck({theme: 'square-classic-yellow', selector: 'triangle'});
+
+        $('input:radio[name=radio-test5]').wRadio({theme: 'circle-radial-red', selector: 'checkmark'});
+        $('input:radio[name=radio-test6]').wRadio({theme: 'circle-radial-green', selector: 'cross'});
+        $('input:radio[name=radio-test7]').wRadio({theme: 'circle-radial-blue', selector: 'plus'});
+        $('input:radio[name=radio-test8]').wRadio({theme: 'circle-radial-yellow', selector: 'triangle'});
+
+        $('input.checkbox-test5').wCheck({theme: 'square-radial-red', selector: 'circle', highlightLabel: true});
+        $('input.checkbox-test6').wCheck({theme: 'square-radial-green', selector: 'circle-solid', highlightLabel: true});
+        $('input.checkbox-test7').wCheck({theme: 'square-radial-blue', selector: 'square', highlightLabel: true});
+        $('input.checkbox-test8').wCheck({theme: 'square-radial-yellow', selector: 'square-solid', highlightLabel: true});
         
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-    <!-- footerend -->
+        $('input:radio[name=radio-test9]').wRadio({theme: 'circle-inset-red', selector: 'circle', highlightLabel: true});
+        $('input:radio[name=radio-test10]').wRadio({theme: 'circle-inset-green', selector: 'circle-solid', highlightLabel: true});
+        $('input:radio[name=radio-test11]').wRadio({theme: 'circle-inset-blue', selector: 'square', highlightLabel: true});
+        $('input:radio[name=radio-test12]').wRadio({theme: 'circle-inset-yellow', selector: 'square-solid', highlightLabel: true});
+
+        $('input.checkbox-test9').wCheck({theme: 'square-inset-red', selector: 'square-dot-red', highlightLabel: true});
+        $('input.checkbox-test10').wCheck({theme: 'square-inset-green', selector: 'square-dot-green', highlightLabel: true});
+        $('input.checkbox-test11').wCheck({theme: 'square-inset-blue', selector: 'square-dot-blue', highlightLabel: true});
+        $('input.checkbox-test12').wCheck({theme: 'square-inset-yellow', selector: 'square-dot-yellow', highlightLabel: true});
+      </script>
+    </div>
+  </div>
+
+  <!-- footstart -->
+  <footer>
+    <div id="footer-icons">
+      <!--a id="youtube-icon" href="http://websanova.com/youtube" target="_blank"></a-->
+      <a id="stumbleupon-icon" href="http://websanova.com/stumbleupon" target="_blank"></a>
+      <a id="linkedin-icon" href="http://websanova.com/linkedin" target="_blank"></a>
+      <a id="facebook-icon" href="http://websanova.com/facebook" target="_blank"></a>
+      <a id="googleplus-icon" href="http://websanova.com/googleplus" target="_blank"></a>
+      <a id="twitter-icon" href="http://websanova.com/twitter" target="_blank"></a>
+      <a id="github-icon" href="http://websanova.com/github" target="_blank"></a>
+      <a id="rss-icon" href="http://websanova.com/feed" target="_blank"></a>
+    </div>
+  </footer>
+  <!-- footend -->
 </body>
 </html>
