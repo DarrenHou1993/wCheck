@@ -48,6 +48,7 @@
                 this.createLabel(); // make sure this is run before setTheme()
                 this.setTheme(this.options.theme);
                 this.setSelector(this.options.selector);
+                this.setDisabled(this.options.disabled || this.$el.prop('disabled'));
 
                 // focus is only triggered after `tab` key is pressed: seems to be the way the browser does it
                 $(document).keydown(function(e){
@@ -126,6 +127,11 @@
             this.$selector.addClass('wCheck-selector-' + selector);
         },
 
+        setDisabled: function(disabled) {
+            this.$el.prop('disabled', disabled);
+            this.$check[(disabled ? 'add' : 'remove') + 'Class']('wCheck-disabled');
+        },
+
         _check: function(checked) {
             this.checked = checked;
 
@@ -190,6 +196,7 @@
     $.fn.wCheck.defaults = {
         theme: 'square-classic-blue',   // theme
         selector: 'checkmark',          // selector
+        disabled: false,                // toggle enabled/disabled
         useExistingLabel: true,         // if there is a for="id" matching use it
         highlightLabel: false           // toggle highlighting active/hover label
     };
@@ -203,6 +210,7 @@
     $.fn.wRadio.defaults = {
         theme: 'circle-classic-blue',   // theme
         selector: 'circle-dot-blue',    // selector
+        disabled: false,                // toggle enabled/disabled
         useExistingLabel: true,         // if there is a for="id" matching use it
         highlightLabel: false           // toggle highlighting active/hover label
     };
