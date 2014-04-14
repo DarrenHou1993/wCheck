@@ -113,12 +113,18 @@
         },
 
         setTheme: function(theme) {
-            this.$check.attr('class', this.$check.attr('class').replace(/wCheck-theme-.+\s|wCheck-theme-.+$/, ''));
-            this.$check.addClass('wCheck-theme-' + theme);
+            theme = theme.split(' ');
+
+            this.$check.attr('class', (this.$check.attr('class') || '').replace(/\s?wCheck-theme-(\S*)\s?/, ''));
+            for (var i = 0, ii = theme.length; i < ii ; i++) {
+                this.$check.addClass('wCheck-theme-' + theme[i]);
+            }
 
             if (this.$label) {
-                this.$label.attr('class', this.$label.attr('class').replace(/wCheck-label-theme-.+\s|wCheck-label-theme-.+$/, ''));
-                this.$label.addClass('wCheck-label-theme-' + theme);
+                this.$label.attr('class', (this.$label.attr('class') || '').replace(/\s?wCheck-label-theme-(\S*)\s?/, ''));
+                for (var i = 0, ii = theme.length; i < ii ; i++) {
+                    this.$label.addClass('wCheck-label-theme-' + theme[i]);
+                }
             }
         },
 
@@ -194,7 +200,7 @@
     };
 
     $.fn.wCheck.defaults = {
-        theme: 'square-classic-blue',   // theme
+        theme: 'square-classic blue',   // theme
         selector: 'checkmark',          // selector
         disabled: false,                // toggle enabled/disabled
         useExistingLabel: true,         // if there is a for="id" matching use it
@@ -208,7 +214,7 @@
     };
     
     $.fn.wRadio.defaults = {
-        theme: 'circle-classic-blue',   // theme
+        theme: 'circle-classic blue',   // theme
         selector: 'circle-dot-blue',    // selector
         disabled: false,                // toggle enabled/disabled
         useExistingLabel: true,         // if there is a for="id" matching use it
