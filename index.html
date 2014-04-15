@@ -30,7 +30,7 @@
     <div class="content-box">
       <!-- classic -->
       <label class="wLabel-left">Classic:</label>
-      <input id="radio-test1_1" tabindex="6" type="radio" name="radio-test1" value="one" checked="checked" /><label for="radio-test1_1">one</label>
+      <input id="radio-test1_1" tabindex="6" type="radio" disabled="disabled" name="radio-test1" value="one" checked="checked" /><label for="radio-test1_1">one</label>
       <input id="radio-test1_2" tabindex="6" type="radio" name="radio-test1" value="two" /><label for="radio-test1_2">two</label>
       <input id="radio-test1_3" tabindex="6" type="radio" name="radio-test1" value="three" /><label for="radio-test1_3">three</label>
       <input id="radio-test1_4" tabindex="6" type="radio" name="radio-test1" value="four" /><label for="radio-test1_4">four</label>
@@ -181,38 +181,38 @@
       <input type="checkbox" tabindex="66" class="checkbox-test12" data-label="four" checked="checked" />
 
       <link rel="Stylesheet" type="text/css" href="./wCheck.css" />
-      <script type="text/javascript" src="./wCheck.min.js"></script>
+      <script type="text/javascript" src="./wCheck.js"></script>
       
       <script type="text/javascript">
-        $('input:radio[name=radio-test1]').wRadio({theme: 'circle-classic-red', selector: 'circle-dot-red'});
-        $('input:radio[name=radio-test2]').wRadio({theme: 'circle-classic-green', selector: 'circle-dot-green'});
-        $('input:radio[name=radio-test3]').wRadio({theme: 'circle-classic-blue', selector: 'circle-dot-blue'});
-        $('input:radio[name=radio-test4]').wRadio({theme: 'circle-classic-yellow', selector: 'circle-dot-yellow'});
+        $('input:radio[name=radio-test1]').wRadio({theme: 'circle-classic red', selector: 'circle-dot-red'});
+        $('input:radio[name=radio-test2]').wRadio({theme: 'circle-classic green', selector: 'circle-dot-green'});
+        $('input:radio[name=radio-test3]').wRadio({theme: 'circle-classic blue', selector: 'circle-dot-blue'});
+        $('input:radio[name=radio-test4]').wRadio({theme: 'circle-classic yellow', selector: 'circle-dot-yellow'});
 
-        $('input.checkbox-test1').wCheck({theme: 'square-classic-red', selector: 'checkmark'});
-        $('input.checkbox-test2').wCheck({theme: 'square-classic-green', selector: 'cross'});
-        $('input.checkbox-test3').wCheck({theme: 'square-classic-blue', selector: 'plus'});
-        $('input.checkbox-test4').wCheck({theme: 'square-classic-yellow', selector: 'triangle'});
+        $('input.checkbox-test1').wCheck({theme: 'square-classic red', selector: 'checkmark'});
+        $('input.checkbox-test2').wCheck({theme: 'square-classic green', selector: 'cross'});
+        $('input.checkbox-test3').wCheck({theme: 'square-classic blue', selector: 'plus'});
+        $('input.checkbox-test4').wCheck({theme: 'square-classic yellow', selector: 'triangle'});
 
-        $('input:radio[name=radio-test5]').wRadio({theme: 'circle-radial-red', selector: 'checkmark'});
-        $('input:radio[name=radio-test6]').wRadio({theme: 'circle-radial-green', selector: 'cross'});
-        $('input:radio[name=radio-test7]').wRadio({theme: 'circle-radial-blue', selector: 'plus'});
-        $('input:radio[name=radio-test8]').wRadio({theme: 'circle-radial-yellow', selector: 'triangle'});
+        $('input:radio[name=radio-test5]').wRadio({theme: 'circle-radial red', selector: 'checkmark'});
+        $('input:radio[name=radio-test6]').wRadio({theme: 'circle-radial green', selector: 'cross'});
+        $('input:radio[name=radio-test7]').wRadio({theme: 'circle-radial blue', selector: 'plus'});
+        $('input:radio[name=radio-test8]').wRadio({theme: 'circle-radial yellow', selector: 'triangle'});
 
-        $('input.checkbox-test5').wCheck({theme: 'square-radial-red', selector: 'circle', highlightLabel: true});
-        $('input.checkbox-test6').wCheck({theme: 'square-radial-green', selector: 'circle-solid', highlightLabel: true});
-        $('input.checkbox-test7').wCheck({theme: 'square-radial-blue', selector: 'square', highlightLabel: true});
-        $('input.checkbox-test8').wCheck({theme: 'square-radial-yellow', selector: 'square-solid', highlightLabel: true});
+        $('input.checkbox-test5').wCheck({theme: 'square-radial red', selector: 'circle', highlightLabel: true});
+        $('input.checkbox-test6').wCheck({theme: 'square-radial green', selector: 'circle-solid', highlightLabel: true});
+        $('input.checkbox-test7').wCheck({theme: 'square-radial blue', selector: 'square', highlightLabel: true});
+        $('input.checkbox-test8').wCheck({theme: 'square-radial yellow', selector: 'square-solid', highlightLabel: true});
         
-        $('input:radio[name=radio-test9]').wRadio({theme: 'circle-inset-red', selector: 'circle', highlightLabel: true});
-        $('input:radio[name=radio-test10]').wRadio({theme: 'circle-inset-green', selector: 'circle-solid', highlightLabel: true});
-        $('input:radio[name=radio-test11]').wRadio({theme: 'circle-inset-blue', selector: 'square', highlightLabel: true});
-        $('input:radio[name=radio-test12]').wRadio({theme: 'circle-inset-yellow', selector: 'square-solid', highlightLabel: true});
+        $('input:radio[name=radio-test9]').wRadio({theme: 'circle-inset red', selector: 'circle', highlightLabel: true});
+        $('input:radio[name=radio-test10]').wRadio({theme: 'circle-inset green', selector: 'circle-solid', highlightLabel: true});
+        $('input:radio[name=radio-test11]').wRadio({theme: 'circle-inset blue', selector: 'square', highlightLabel: true});
+        $('input:radio[name=radio-test12]').wRadio({theme: 'circle-inset yellow', selector: 'square-solid', highlightLabel: true});
 
-        $('input.checkbox-test9').wCheck({theme: 'square-inset-red', selector: 'square-dot-red', highlightLabel: true});
-        $('input.checkbox-test10').wCheck({theme: 'square-inset-green', selector: 'square-dot-green', highlightLabel: true});
-        $('input.checkbox-test11').wCheck({theme: 'square-inset-blue', selector: 'square-dot-blue', highlightLabel: true});
-        $('input.checkbox-test12').wCheck({theme: 'square-inset-yellow', selector: 'square-dot-yellow', highlightLabel: true});
+        $('input.checkbox-test9').wCheck({theme: 'square-inset red', selector: 'square-dot-red', highlightLabel: true});
+        $('input.checkbox-test10').wCheck({theme: 'square-inset green', selector: 'square-dot-green', highlightLabel: true});
+        $('input.checkbox-test11').wCheck({theme: 'square-inset blue', selector: 'square-dot-blue', highlightLabel: true});
+        $('input.checkbox-test12').wCheck({theme: 'square-inset yellow', selector: 'square-dot-yellow', highlightLabel: true});
       </script>
     </div>
   </div>

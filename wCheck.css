@@ -35,6 +35,9 @@
     font-size: 10px;
     color: #666;
 }
+.wCheck-label-disabled {
+    cursor: default;
+}
 .wCheck-selector,
 .wCheck-focus {
     position: absolute;
@@ -44,6 +47,13 @@
     height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
+}
+.wCheck-disabled {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
 }
 .wCheck-off .wCheck-selector {
     display: none;
@@ -114,7 +124,23 @@
 .wCheck-selector-square-dot-green { background-image: url('./img/selector-square-dot-green.png'); }
 .wCheck-selector-square-dot-yellow { background-image: url('./img/selector-square-dot-yellow.png'); }
 
-.wCheck-disabled { background-image: url('./img/circle-classic-disabled.png'); }
+.wCheck-disabled {
+    background-color: #000;
+    opacity: 0.4;
+    cursor: default;
+}
+
+.wCheck-theme-square-classic .wCheck-disabled,
+.wCheck-theme-square-inset .wCheck-disabled,
+.wCheck-theme-square-radial .wCheck-disabled {
+    border-radius: 4px;
+}
+
+.wCheck-theme-circle-classic .wCheck-disabled,
+.wCheck-theme-circle-inset .wCheck-disabled,
+.wCheck-theme-circle-radio .wCheck-disabled{
+    border-radius: 10px;
+}
 
 /***********************************
  * Labels

@@ -23,10 +23,12 @@
 
                 this.$check = $('<div class="wCheck wCheck-off wCheck-mode-' + this.mode + ' ' + (this.mode === 'radio' && this.name ? 'wCheck-name-' + this.name : '') + '"></div>');
                 this.$selector = $('<div class="wCheck-selector"></div>');
+                this.$disabled = $('<div class="wCheck-disabled"></div>').hide();
                 this.$focus = $('<div class="wCheck-focus"></div>').hide();
                 this.$check.append(this.$selector).append(this.$focus);
                 this.$el.addClass('wCheck-el').hide().after(this.$check);
-                this.$check.append(this.$el.show().css({opacity:'0'}));
+                this.$check.append(this.$el.show().css({opacity:'0'})).append(this.$disabled);
+
                 
                 this.$el
                 .change(function() { _self.onChange(); })
@@ -88,9 +90,11 @@
         },
 
         onFocus: function() {
-            this.$check.addClass('wCheck-hover');
+            if (!this.options.disabled) {
+                this.$check.addClass('wCheck-hover');
+            }
             
-            if (this.$label && this.options.highlightLabel) {
+            if (this.$label && this.options.highlightLabel && !this.options.disabled) {
                 this.$label.addClass('wCheck-label-hover');
             }
         },
@@ -113,16 +117,18 @@
         },
 
         setTheme: function(theme) {
+            var i, ii;
+
             theme = theme.split(' ');
 
             this.$check.attr('class', (this.$check.attr('class') || '').replace(/\s?wCheck-theme-(\S*)\s?/, ''));
-            for (var i = 0, ii = theme.length; i < ii ; i++) {
+            for (i = 0, ii = theme.length; i < ii ; i++) {
                 this.$check.addClass('wCheck-theme-' + theme[i]);
             }
 
             if (this.$label) {
                 this.$label.attr('class', (this.$label.attr('class') || '').replace(/\s?wCheck-label-theme-(\S*)\s?/, ''));
-                for (var i = 0, ii = theme.length; i < ii ; i++) {
+                for (i = 0, ii = theme.length; i < ii ; i++) {
                     this.$label.addClass('wCheck-label-theme-' + theme[i]);
                 }
             }
@@ -134,8 +140,13 @@
         },
 
         setDisabled: function(disabled) {
+            this.options.disabled = disabled;
             this.$el.prop('disabled', disabled);
-            this.$check[(disabled ? 'add' : 'remove') + 'Class']('wCheck-disabled');
+            this.$disabled[(disabled ? 'show' : 'hide')]();
+            
+            if (this.$label) {
+                this.$label[(disabled ? 'add' : 'remove') + 'Class']('wCheck-label-disabled');
+            }
         },
 
         _check: function(checked) {
@@ -163,13 +174,13 @@
                 var wCheck = $(this).data('wCheck');
 
                 if (wCheck) {
-                    var func = (value ? 'set' : 'get') + options.charAt(0).toUpperCase() + options.substring(1).toLowerCase();
+                    var func = (value !== undefined ? 'set' : 'get') + options.charAt(0).toUpperCase() + options.substring(1).toLowerCase();
 
                     if (wCheck[options]) {
                         wCheck[options].apply(wCheck, [value]);
-                    } else if (value) {
-                        if (wCheck[func]) { wCheck[func].apply(wCheck, [value]); }
+                    } else if (value !== undefined) {
                         if (wCheck.options[options]) { wCheck.options[options] = value; }
+                        if (wCheck[func]) { wCheck[func].apply(wCheck, [value]); }
                     } else {
                         if(wCheck[func]) { values.push(wCheck[func].apply(wCheck, [value])); }
                         else if (wCheck.options[options]) { values.push(wCheck.options[options]); }
@@ -208,7 +219,9 @@
     };
 
     $.fn.wRadio = function(options, value) {
-        options = $.extend({}, $.fn.wRadio.defaults, options);
+        if (typeof options !== 'string') {
+            options = $.extend({}, $.fn.wRadio.defaults, options);
+        }
 
         return $.fn.wCheck.apply(this, [options, value]);
     };

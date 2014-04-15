@@ -141,6 +141,18 @@ Global CSS labels are also available in this plugin and can be used by setting a
 <label class="wLabel-left">Label:</label>
 ```
 
+### disabling
+
+You can pre-disable an input in two ways.
+
+* Via it's attribute `disabled="disabled"`.
+* By setting the option `disabled: true`.
+
+To disable end enable the input in real time afterwards do it manually through the plugin function.
+
+$('#elem').wRadio('disabled', <boolean>);
+$('#elem').wCheck('disabled', <boolean>);
+
 
 ## Grunt.js
 
